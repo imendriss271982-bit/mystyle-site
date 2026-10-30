@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Style — Ta personal stylist IA</title>
+<meta name="description" content="My Style : analyse de ton visage, de ta morphologie et de tes couleurs, outfit check noté et Aura, ta personal stylist IA qui te parle.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f6efe3; --silk1:#fbf6ec; --silk2:#efe3cf; --silk3:#e6d5b8;
+  --gold:#b8914a; --gold-dark:#8c6a2e; --gold-light:#e8cf8f;
+  --ink:#3b3024; --soft:#6f6252;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Jost',sans-serif; color:var(--ink); line-height:1.6;
+  background:var(--cream); overflow-x:hidden;
+}
+/* Fond soie crème ondulée */
+.silk{position:fixed;inset:0;z-index:-1;
+  background:
+   radial-gradient(120% 60% at 20% 10%, var(--silk1) 0%, transparent 60%),
+   radial-gradient(90% 50% at 80% 40%, var(--silk3) 0%, transparent 55%),
+   radial-gradient(110% 60% at 30% 90%, var(--silk2) 0%, transparent 60%),
+   linear-gradient(160deg,var(--silk1),var(--silk2) 45%,var(--silk1) 70%,var(--silk3));
+  background-size:200% 200%; animation:wave 18s ease-in-out infinite alternate}
+@keyframes wave{0%{background-position:0% 0%}100%{background-position:100% 100%}}
+@media (prefers-reduced-motion:reduce){.silk{animation:none}}
+
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{padding:22px 0;text-align:center}
+.logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(40px,8vw,64px);letter-spacing:2px;
+  color:var(--gold-dark);text-shadow:0 1px 0 #fff,0 3px 6px rgba(140,106,46,.35)}
+.logo span{color:var(--ink);font-weight:500}
+
+.hero{text-align:center;padding:30px 0 50px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,5.5vw,50px);line-height:1.15;font-weight:700;margin-bottom:16px}
+.hero p{font-size:18px;color:var(--soft);max-width:620px;margin:0 auto 30px;font-weight:300}
+
+/* Boutons cristal dorés */
+.btn{display:inline-block;padding:15px 34px;border-radius:40px;text-decoration:none;
+  color:#fff;font-weight:500;letter-spacing:.5px;font-size:16px;position:relative;overflow:hidden;
+  background:linear-gradient(180deg,rgba(232,207,143,.85),rgba(184,145,74,.85) 55%,rgba(140,106,46,.9));
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(255,240,200,.9);
+  box-shadow:0 0 18px rgba(232,207,143,.6),0 8px 22px rgba(140,106,46,.3),inset 0 1px 0 rgba(255,255,255,.7);
+  text-shadow:0 1px 2px rgba(80,55,15,.5);transition:transform .2s}
+.btn::before{content:"";position:absolute;left:8%;right:8%;top:2px;height:45%;border-radius:40px;
+  background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0))}
+.btn:hover{transform:translateY(-2px)}
+.small{font-size:13px;color:var(--soft);margin-top:12px}
+
+/* Cartes ambre */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding:20px 0 60px}
+.card{background:rgba(255,252,245,.75);border-radius:22px;padding:26px 22px;
+  border:1.5px solid rgba(201,150,60,.55);
+  box-shadow:0 0 0 4px rgba(232,190,110,.15),0 0 22px rgba(214,160,70,.25),0 10px 25px rgba(90,65,30,.08)}
+.card .ic{font-size:30px;margin-bottom:10px}
+.card h3{font-family:'Cormorant Garamond',serif;font-size:24px;margin-bottom:6px}
+.card p{color:var(--soft);font-size:15px}
+
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4.5vw,38px);text-align:center;margin-bottom:10px}
+.lead{text-align:center;color:var(--soft);margin-bottom:24px}
+
+.aura{text-align:center;padding:50px 22px;margin-bottom:60px}
+.cta{text-align:center;padding:40px 22px 70px}
+
+.policy{background:rgba(255,252,245,.85);border-radius:22px;padding:34px 26px;margin-bottom:60px;
+  border:1px solid rgba(201,150,60,.4)}
+.policy h2{text-align:left;font-size:30px}
+.policy h4{font-family:'Cormorant Garamond',serif;font-size:21px;margin:20px 0 4px}
+.policy p,.policy li{font-size:15px;color:var(--soft)}
+.policy ul{padding-left:20px}
+
+footer{text-align:center;padding:30px 0 40px;font-size:14px;color:var(--soft)}
+footer a{color:var(--gold-dark)}
+</style>
+</head>
+<body>
+<div class="silk"></div>
+
+<div class="wrap">
+  <header><div class="logo">My <span>STYLE</span></div></header>
+
+  <section class="hero">
+    <h1>Ta personal stylist IA,<br>toujours avec toi</h1>
+    <p>Une seule photo pour découvrir la forme de ton visage, ta morphologie et tes couleurs. Puis Aura, ta styliste, te parle et t'aide à révéler ta beauté chaque jour.</p>
+    <a class="btn" href="mailto:contact@divadivina.app?subject=Liste%20d'attente%20My%20Style&body=Bonjour%2C%20je%20veux%20%C3%AAtre%20pr%C3%A9venue%20du%20lancement%20de%20My%20Style.%20Mon%20pr%C3%A9nom%20%3A%20">Rejoindre la liste d'attente</a>
+    <div class="small">Bientôt sur Google Play · Gratuit pendant la phase de test</div>
+  </section>
+
+  <h2>Tout ton style, en une app</h2>
+  <p class="lead">Ce qu'une styliste fait pour toi, maintenant dans ta poche.</p>
+  <div class="grid">
+    <div class="card"><div class="ic">✨</div><h3>Morpho-visage</h3><p>Les vraies mesures de ton visage pour choisir coiffure, couleur de cheveux, lunettes et make-up.</p></div>
+    <div class="card"><div class="ic">👗</div><h3>Morphologie & Kibbe</h3><p>Ta silhouette et ton type Kibbe, que tu sois petite, grande ou en grande taille.</p></div>
+    <div class="card"><div class="ic">🎨</div><h3>Colorimétrie</h3><p>Ton sous-ton, ta saison et les couleurs qui illuminent ton teint.</p></div>
+    <div class="card"><div class="ic">📸</div><h3>Outfit check</h3><p>Prends ta tenue en photo : une note, ce qui va bien et ce qu'il faut changer.</p></div>
+    <div class="card"><div class="ic">💍</div><h3>Zifafi Wedding</h3><p>Ton style de mariée, guidé par Aura, à partir de ton profil My Style.</p></div>
+    <div class="card"><div class="ic">🛍️</div><h3>Boutique</h3><p>Aura te montre où trouver la tenue parfaite pour toi.</p></div>
+  </div>
+
+  <section class="card aura">
+    <h2>Rencontre Aura</h2>
+    <p class="lead" style="margin-bottom:0">Elle t'appelle par ton prénom, te parle à voix haute, regarde tes photos et te conseille comme une vraie styliste. En français, en anglais et en arabe qatari.</p>
+  </section>
+
+  <section class="cta">
+    <h2>Sois parmi les premières</h2>
+    <p class="lead">Lancement prévu début novembre 2026.</p>
+    <a class="btn" href="mailto:contact@divadivina.app?subject=Liste%20d'attente%20My%20Style&body=Bonjour%2C%20je%20veux%20%C3%AAtre%20pr%C3%A9venue%20du%20lancement%20de%20My%20Style.%20Mon%20pr%C3%A9nom%20%3A%20">Je veux être prévenue</a>
+  </section>
+
+  <section class="policy" id="confidentialite">
+    <h2>Politique de confidentialité</h2>
+    <p>Dernière mise à jour : 30 octobre 2026. Cette politique s'applique à l'application My Style et à ce site.</p>
+
+    <h4>Données collectées</h4>
+    <ul>
+      <li>Ton adresse email et ton prénom, pour créer ton profil.</li>
+      <li>Les informations que tu choisis d'ajouter (taille, poids, préférences de style).</li>
+      <li>Les photos que tu envoies (visage, silhouette, tenues) pour les analyses.</li>
+      <li>Ta voix, uniquement pendant un appel avec Aura, pour comprendre ta demande.</li>
+    </ul>
+
+    <h4>Utilisation</h4>
+    <p>Ces données servent seulement à te donner tes analyses et conseils de style personnalisés. Les photos et la voix sont traitées par un service d'intelligence artificielle (Google Gemini) via un hébergement sécurisé (Cloudflare). Nous ne vendons jamais tes données.</p>
+
+    <h4>Liens vers des boutiques</h4>
+    <p>La Boutique peut contenir des liens vers des sites marchands. Quand tu cliques, tu quittes My Style et la politique de ce site s'applique.</p>
+
+    <h4>Conservation et suppression</h4>
+    <p>Tu peux demander à tout moment l'accès à tes données ou leur suppression complète (compte, photos, profil) en écrivant à l'adresse ci-dessous. Nous traitons la demande sous 30 jours.</p>
+
+    <h4>Mineures</h4>
+    <p>My Style s'adresse aux personnes de 18 ans et plus.</p>
+
+    <h4>Contact</h4>
+    <p>My Style — Doha, Qatar — <a href="mailto:contact@divadivina.app">contact@divadivina.app</a></p>
+  </section>
+
+  <footer>
+    © 2026 My Style · <a href="#confidentialite">Confidentialité</a> · <a href="mailto:contact@divadivina.app">Contact</a>
+  </footer>
+</div>
+</body>
+</html>
