@@ -29,7 +29,7 @@ html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3,html[lang=ar] h4{font-family:
 @keyframes shine{0%{background-position:150% 0}100%{background-position:-150% 0}}
 @media (prefers-reduced-motion:reduce){.silk{animation-duration:60s}.silk::after{animation:none}}
 
-.wrap{max-width:1360px;margin:0 auto;padding:0 clamp(16px,4vw,56px)}
+.wrap{max-width:none;margin:0;padding:0 clamp(16px,2vw,32px)}
 
 /* En-tête */
 header{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:10px}
@@ -71,7 +71,7 @@ section{padding:34px 0}
 .kicker{display:block;text-align:center;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-dark);margin-bottom:6px}
 html[lang=ar] .kicker{letter-spacing:0}
 h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4.5vw,40px);text-align:center;line-height:1.2;margin-bottom:8px}
-.lead{text-align:center;color:var(--soft);max-width:680px;margin:0 auto 24px}
+.lead{text-align:center;color:var(--soft);max-width:900px;margin:0 auto 24px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
 .card{position:relative;background:var(--card);border-radius:22px;padding:24px 20px;
   border:1.5px solid rgba(201,150,60,.55);
@@ -112,7 +112,7 @@ html[lang=ar] .quote{font-family:'Tajawal',sans-serif;font-style:normal}
 .policy p,.policy li{font-size:15px;color:var(--soft)}
 .policy ul{padding-inline-start:20px}
 /* Pleine page : sur ordinateur plus de colonnes, sur téléphone les cartes défilent sur le côté */
-@media (min-width:1000px){.grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}}
+@media (min-width:1000px){.grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}.hero h1{font-size:clamp(48px,4.4vw,76px)}.hero p{font-size:clamp(18px,1.35vw,24px);max-width:900px}.card p,.card li{font-size:clamp(15px,1vw,18px)}.card h3{font-size:clamp(24px,1.7vw,32px)}}
 @media (max-width:720px){
   .grid,.two{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:6px 16px 14px;margin:0 -16px;scrollbar-width:none}
   .grid::-webkit-scrollbar,.two::-webkit-scrollbar{display:none}
