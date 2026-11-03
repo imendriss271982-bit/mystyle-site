@@ -1,149 +1,408 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>My Style — Ta personal stylist IA</title>
-<meta name="description" content="My Style : analyse de ton visage, de ta morphologie et de tes couleurs, outfit check noté et Aura, ta personal stylist IA qui te parle.">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<title>My Style — Ta personal stylist IA | Aura</title>
+<meta name="description" content="My Style : analyse de ton visage, de ta silhouette et de tes couleurs, garde-robe digitale, outfit check noté, abaya et occasions du Golfe, espace mariée Zifafi Wedding, et Aura, ta personal stylist IA qui te parle en français, anglais et arabe.">
+<meta property="og:title" content="My Style — Ta personal stylist IA">
+<meta property="og:description" content="Aura analyse ton visage, ta silhouette et tes couleurs, puis t'habille chaque jour avec ta propre garde-robe.">
+<meta property="og:image" content="https://mystyle.divadivina.app/logo-my-style.jpg">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Great+Vibes&family=Jost:wght@300;400;500&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --cream:#f6efe3; --silk1:#fbf6ec; --silk2:#efe3cf; --silk3:#e6d5b8;
-  --gold:#b8914a; --gold-dark:#8c6a2e; --gold-light:#e8cf8f;
-  --ink:#3b3024; --soft:#6f6252;
+  --cream:#f6efe3; --gold:#b8914a; --gold-dark:#8c6d35; --gold-deep:#765a2a; --gold-light:#e8cf8f;
+  --ink:#292421; --soft:#6e6e6e; --card:rgba(255,255,255,.88);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Jost',sans-serif; color:var(--ink); line-height:1.6;
-  background:var(--cream); overflow-x:hidden;
-}
-/* Fond soie crème ondulée */
-.silk{position:fixed;inset:0;z-index:-1;
-  background:
-   radial-gradient(120% 60% at 20% 10%, var(--silk1) 0%, transparent 60%),
-   radial-gradient(90% 50% at 80% 40%, var(--silk3) 0%, transparent 55%),
-   radial-gradient(110% 60% at 30% 90%, var(--silk2) 0%, transparent 60%),
-   linear-gradient(160deg,var(--silk1),var(--silk2) 45%,var(--silk1) 70%,var(--silk3));
-  background-size:200% 200%; animation:wave 18s ease-in-out infinite alternate}
-@keyframes wave{0%{background-position:0% 0%}100%{background-position:100% 100%}}
-@media (prefers-reduced-motion:reduce){.silk{animation:none}}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Jost',sans-serif;color:var(--ink);line-height:1.6;background:var(--cream);overflow-x:hidden}
+html[lang=ar] body{font-family:'Tajawal',sans-serif}
+html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3,html[lang=ar] h4{font-family:'Tajawal',sans-serif;font-weight:700}
 
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-header{padding:22px 0;text-align:center}
-.logo{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(40px,8vw,64px);letter-spacing:2px;
-  color:var(--gold-dark);text-shadow:0 1px 0 #fff,0 3px 6px rgba(140,106,46,.35)}
-.logo span{color:var(--ink);font-weight:500}
+/* Fond soie crème qui ondule */
+.silk{position:fixed;inset:-6%;z-index:-2;background:url(fond-soie.webp) center/cover;animation:wave 26s ease-in-out infinite alternate}
+.silk::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.35) 50%,transparent 65%);background-size:250% 100%;animation:shine 11s linear infinite}
+@keyframes wave{0%{transform:scale(1.04) translate(0,0) rotate(0)}50%{transform:scale(1.08) translate(-1.5%,1%) rotate(.6deg)}100%{transform:scale(1.05) translate(1.5%,-1%) rotate(-.4deg)}}
+@keyframes shine{0%{background-position:150% 0}100%{background-position:-150% 0}}
+@media (prefers-reduced-motion:reduce){.silk{animation-duration:60s}.silk::after{animation:none}}
 
-.hero{text-align:center;padding:30px 0 50px}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,5.5vw,50px);line-height:1.15;font-weight:700;margin-bottom:16px}
-.hero p{font-size:18px;color:var(--soft);max-width:620px;margin:0 auto 30px;font-weight:300}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+
+/* En-tête */
+header{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:10px}
+.langs{display:flex;gap:6px}
+.langs button{border:1px solid rgba(201,150,60,.6);background:#fff;color:var(--gold-dark);border-radius:20px;padding:6px 12px;font:500 14px 'Jost','Tajawal',sans-serif;cursor:pointer}
+@media (max-width:420px){.langs{gap:4px}.langs button{padding:5px 9px;font-size:13px}.logo .st{letter-spacing:1.5px}}
+.langs button.on{background:var(--gold-dark);color:#fff}
+.logo{font-size:clamp(28px,7vw,52px);line-height:1.1;padding:4px 6px;white-space:nowrap;direction:ltr}
+.logo .my{font-family:'Great Vibes',cursive;font-weight:400;background:linear-gradient(180deg,#e8cf8f,#b8914a 55%,#765a2a);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 2px rgba(118,90,42,.35));padding:0 6px}
+.logo .st{font-family:'Cormorant Garamond',serif;font-weight:700;letter-spacing:3px;color:#3a2a1c;text-shadow:0 1px 0 #fff,0 3px 6px rgba(118,90,42,.3)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;padding:20px 0 40px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5.5vw,54px);line-height:1.12;font-weight:700;margin-bottom:14px}
+.hero p{font-size:18px;color:var(--soft);margin-bottom:24px;font-weight:300}
+.hero-img{text-align:center}
+.hero-img img{width:100%;max-width:320px;height:auto;border-radius:50%;background:radial-gradient(circle,#fff 55%,rgba(255,255,255,0) 72%)}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.badge{background:rgba(255,255,255,.8);border:1px solid rgba(201,150,60,.45);border-radius:20px;padding:4px 12px;font-size:13px;color:var(--gold-dark)}
+@media (max-width:720px){.hero{grid-template-columns:1fr;text-align:center}.hero-img{order:-1}.hero-img img{max-width:210px}.badges{justify-content:center}}
 
 /* Boutons cristal dorés */
-.btn{display:inline-block;padding:15px 34px;border-radius:40px;text-decoration:none;
-  color:#fff;font-weight:500;letter-spacing:.5px;font-size:16px;position:relative;overflow:hidden;
-  background:linear-gradient(180deg,rgba(232,207,143,.85),rgba(184,145,74,.85) 55%,rgba(140,106,46,.9));
+.btn{display:inline-block;padding:15px 32px;border-radius:40px;text-decoration:none;cursor:pointer;
+  color:#fff;font-weight:500;letter-spacing:.4px;font-size:16px;position:relative;overflow:hidden;border:1px solid rgba(255,240,200,.9);
+  background:linear-gradient(180deg,rgba(168,132,63,.82),rgba(140,109,53,.86) 55%,rgba(118,90,42,.92));
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
-  border:1px solid rgba(255,240,200,.9);
-  box-shadow:0 0 18px rgba(232,207,143,.6),0 8px 22px rgba(140,106,46,.3),inset 0 1px 0 rgba(255,255,255,.7);
-  text-shadow:0 1px 2px rgba(80,55,15,.5);transition:transform .2s}
-.btn::before{content:"";position:absolute;left:8%;right:8%;top:2px;height:45%;border-radius:40px;
-  background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,0))}
+  box-shadow:0 0 18px rgba(232,207,143,.55),0 8px 22px rgba(118,90,42,.28),inset 0 1px 0 rgba(255,255,255,.6);
+  text-shadow:0 1px 2px rgba(60,40,10,.5);transition:transform .2s}
+.btn::before{content:"";position:absolute;left:8%;right:8%;top:2px;height:45%;max-height:24px;border-radius:40px;background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0))}
 .btn:hover{transform:translateY(-2px)}
 .small{font-size:13px;color:var(--soft);margin-top:12px}
 
-/* Cartes ambre */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding:20px 0 60px}
-.card{background:rgba(255,252,245,.75);border-radius:22px;padding:26px 22px;
+/* Sections & cartes ambre */
+section{padding:34px 0}
+.kicker{display:block;text-align:center;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-dark);margin-bottom:6px}
+html[lang=ar] .kicker{letter-spacing:0}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4.5vw,40px);text-align:center;line-height:1.2;margin-bottom:8px}
+.lead{text-align:center;color:var(--soft);max-width:680px;margin:0 auto 24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{position:relative;background:var(--card);border-radius:22px;padding:24px 20px;
   border:1.5px solid rgba(201,150,60,.55);
-  box-shadow:0 0 0 4px rgba(232,190,110,.15),0 0 22px rgba(214,160,70,.25),0 10px 25px rgba(90,65,30,.08)}
-.card .ic{font-size:30px;margin-bottom:10px}
-.card h3{font-family:'Cormorant Garamond',serif;font-size:24px;margin-bottom:6px}
-.card p{color:var(--soft);font-size:15px}
+  box-shadow:0 0 0 4px rgba(247,213,142,.18),0 0 22px rgba(185,116,42,.18),0 10px 25px rgba(90,65,30,.07)}
+.card .ic{font-size:30px;margin-bottom:8px}
+.card h3{font-family:'Cormorant Garamond',serif;font-size:24px;line-height:1.2;margin-bottom:6px}
+.card p,.card li{color:var(--soft);font-size:15px}
+.card ul{padding-inline-start:18px;margin-top:6px}
+.step{position:absolute;top:16px;inset-inline-end:18px;width:30px;height:30px;border-radius:50%;background:var(--gold-dark);color:#fff;font-weight:500;display:grid;place-items:center;font-size:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:720px){.two{grid-template-columns:1fr}}
 
-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4.5vw,38px);text-align:center;margin-bottom:10px}
-.lead{text-align:center;color:var(--soft);margin-bottom:24px}
+.aura-box{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center}
+.aura-box img{width:140px;height:140px;object-fit:cover;object-position:top;border-radius:50%;border:3px solid var(--gold-light);background:#fff}
+.aura-box h2,.aura-box .kicker{text-align:start}
+@media (max-width:620px){.aura-box{grid-template-columns:1fr;text-align:center}.aura-box img{margin:0 auto}.aura-box h2,.aura-box .kicker{text-align:center}}
+.quote{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--gold-deep);margin:6px 0 10px}
+html[lang=ar] .quote{font-family:'Tajawal',sans-serif;font-style:normal}
 
-.aura{text-align:center;padding:50px 22px;margin-bottom:60px}
-.cta{text-align:center;padding:40px 22px 70px}
+.zifafi{background:linear-gradient(160deg,rgba(255,255,255,.95),rgba(250,243,230,.92))}
+.zifafi h3{font-family:'Cormorant Garamond',serif;font-size:22px;margin-bottom:4px}
+.zifafi p{color:var(--soft);font-size:15px}
 
-.policy{background:rgba(255,252,245,.85);border-radius:22px;padding:34px 26px;margin-bottom:60px;
-  border:1px solid rgba(201,150,60,.4)}
-.policy h2{text-align:left;font-size:30px}
-.policy h4{font-family:'Cormorant Garamond',serif;font-size:21px;margin:20px 0 4px}
+.cta{text-align:center;padding:50px 0 60px}
+.policy{background:rgba(255,255,255,.9);border-radius:22px;padding:30px 24px;margin-bottom:50px;border:1px solid rgba(201,150,60,.4)}
+.policy h2{text-align:start;font-size:30px}
+.policy h4{font-family:'Cormorant Garamond',serif;font-size:21px;margin:18px 0 4px}
 .policy p,.policy li{font-size:15px;color:var(--soft)}
-.policy ul{padding-left:20px}
-
-footer{text-align:center;padding:30px 0 40px;font-size:14px;color:var(--soft)}
-footer a{color:var(--gold-dark)}
+.policy ul{padding-inline-start:20px}
+footer{text-align:center;padding:24px 0 40px;font-size:14px;color:var(--soft)}
+footer a,.policy a{color:var(--gold-dark)}
 </style>
 </head>
 <body>
-<div class="silk"></div>
+<div class="silk" aria-hidden="true"></div>
 
 <div class="wrap">
-  <header><div class="logo">My <span>STYLE</span></div></header>
+  <header>
+    <div class="logo" aria-label="My Style"><span class="my">My</span><span class="st">STYLE</span></div>
+    <div class="langs" role="group" aria-label="Langue">
+      <button data-l="fr">FR</button><button data-l="en">EN</button><button data-l="ar">عربي</button>
+    </div>
+  </header>
 
+  <!-- HERO -->
   <section class="hero">
-    <h1>Ta personal stylist IA,<br>toujours avec toi</h1>
-    <p>Une seule photo pour découvrir la forme de ton visage, ta morphologie et tes couleurs. Puis Aura, ta styliste, te parle et t'aide à révéler ta beauté chaque jour.</p>
-    <a class="btn" href="mailto:contact@divadivina.app?subject=Liste%20d'attente%20My%20Style&body=Bonjour%2C%20je%20veux%20%C3%AAtre%20pr%C3%A9venue%20du%20lancement%20de%20My%20Style.%20Mon%20pr%C3%A9nom%20%3A%20">Rejoindre la liste d'attente</a>
-    <div class="small">Bientôt sur Google Play · Gratuit pendant la phase de test</div>
+    <div>
+      <h1 data-t="h1">Ta personal stylist IA, toujours avec toi</h1>
+      <p data-t="hp">Aura analyse ton visage, ta silhouette et tes couleurs, puis t'aide chaque jour à t'habiller avec ta propre garde-robe. Elle te parle à voix haute, t'appelle par ton prénom et te conseille comme une vraie styliste.</p>
+      <a class="btn" data-mail data-t="b1" href="mailto:imendriss@divadivina.app">Rejoindre la liste d'attente</a>
+      <div class="small" data-t="hs">Bientôt sur Google Play · Gratuite pendant la phase de test</div>
+      <div class="badges">
+        <span class="badge">Français · English · عربي</span>
+        <span class="badge" data-t="bg2">Pour tout le Golfe</span>
+        <span class="badge" data-t="bg3">Photos facultatives</span>
+      </div>
+    </div>
+    <div class="hero-img"><img src="aura-bust.webp" alt="Aura, la styliste IA de My Style" width="320" height="308"></div>
   </section>
 
-  <h2>Tout ton style, en une app</h2>
-  <p class="lead">Ce qu'une styliste fait pour toi, maintenant dans ta poche.</p>
-  <div class="grid">
-    <div class="card"><div class="ic">✨</div><h3>Morpho-visage</h3><p>Les vraies mesures de ton visage pour choisir coiffure, couleur de cheveux, lunettes et make-up.</p></div>
-    <div class="card"><div class="ic">👗</div><h3>Morphologie & Kibbe</h3><p>Ta silhouette et ton type Kibbe, que tu sois petite, grande ou en grande taille.</p></div>
-    <div class="card"><div class="ic">🎨</div><h3>Colorimétrie</h3><p>Ton sous-ton, ta saison et les couleurs qui illuminent ton teint.</p></div>
-    <div class="card"><div class="ic">📸</div><h3>Outfit check</h3><p>Prends ta tenue en photo : une note, ce qui va bien et ce qu'il faut changer.</p></div>
-    <div class="card"><div class="ic">💍</div><h3>Zifafi Wedding</h3><p>Ton style de mariée, guidé par Aura, à partir de ton profil My Style.</p></div>
-    <div class="card"><div class="ic">🛍️</div><h3>Boutique</h3><p>Aura te montre où trouver la tenue parfaite pour toi.</p></div>
-  </div>
+  <!-- AURA -->
+  <section>
+    <div class="card aura-box">
+      <img src="aura-bust.webp" alt="" loading="lazy">
+      <div>
+        <span class="kicker">My Stylist</span>
+        <h2 data-t="ah">Rencontre Aura</h2>
+        <p class="quote" data-t="aq">« Salut, je suis ta personal stylist. Commençons notre belle aventure de la beauté. »</p>
+        <p data-t="ap">Appelle Aura comme une amie styliste : elle t'écoute, regarde la photo que tu lui montres et te répond à voix haute, en quelques phrases claires. Elle connaît tes analyses, ta garde-robe et tes goûts, et elle parle français, anglais et arabe du Golfe. Tu peux couper sa voix à tout moment et lui écrire.</p>
+      </div>
+    </div>
+  </section>
 
-  <section class="card aura">
-    <h2>Rencontre Aura</h2>
-    <p class="lead" style="margin-bottom:0">Elle t'appelle par ton prénom, te parle à voix haute, regarde tes photos et te conseille comme une vraie styliste. En français, en anglais et en arabe qatari.</p>
+  <!-- ANALYSE -->
+  <section>
+    <span class="kicker" data-t="k1">Une seule fois</span>
+    <h2 data-t="s1">Ton analyse de style en 3 étapes</h2>
+    <p class="lead" data-t="l1">Tu la fais une fois, tu peux la refaire quand tu veux. Toute l'app s'en sert ensuite pour te conseiller.</p>
+    <div class="grid">
+      <div class="card"><span class="step">1</span><div class="ic">✨</div><h3 data-t="c1t">Morpho-visage</h3>
+        <p data-t="c1p">Une photo en lumière claire : l'app mesure ton visage avec 478 points (longueur, front, pommettes, mâchoire) pour trouver sa vraie forme, selon la méthode d'une styliste professionnelle.</p>
+        <ul><li data-t="c1a">Coupes de cheveux qui te vont</li><li data-t="c1b">Couleur de cheveux</li><li data-t="c1c">Lunettes et solaires</li><li data-t="c1d">Make-up selon ta forme de visage</li></ul></div>
+      <div class="card"><span class="step">2</span><div class="ic">👗</div><h3 data-t="c2t">Silhouette & Kibbe</h3>
+        <p data-t="c2p">Avec une photo, ou sans photo en donnant simplement tes mesures. Sablier, poire, triangle inversé, rectangle ou ronde, plus ton type Kibbe.</p>
+        <ul><li data-t="c2a">Conseils selon ta taille, petite ou grande</li><li data-t="c2b">Pensé aussi pour les grandes tailles</li><li data-t="c2c">Coupes à privilégier et à éviter</li></ul></div>
+      <div class="card"><span class="step">3</span><div class="ic">🎨</div><h3 data-t="c3t">Colorimétrie</h3>
+        <p data-t="c3p">Ton sous-ton, ta saison et ta palette personnelle : les couleurs qui illuminent ton teint et celles à porter loin du visage.</p>
+        <ul><li data-t="c3a">Sous-ton chaud, froid ou neutre</li><li data-t="c3b">Ta saison de couleurs</li><li data-t="c3c">Ta palette à emporter en boutique</li></ul></div>
+    </div>
+  </section>
+
+  <!-- QUOTIDIEN -->
+  <section>
+    <span class="kicker" data-t="k2">Chaque jour</span>
+    <h2 data-t="s2">Ton style au quotidien</h2>
+    <p class="lead" data-t="l2">Aura s'habille avec toi, avec les vraies pièces de ton armoire.</p>
+    <div class="grid">
+      <div class="card"><div class="ic">📸</div><h3 data-t="d1t">Outfit check</h3><p data-t="d1p">Dis à Aura pour quelle occasion tu t'habilles, prends ta tenue en photo : tu reçois une note, ce qui va bien et ce qu'il faut changer. Ensuite, Aura en discute avec toi.</p></div>
+      <div class="card"><div class="ic">☀️</div><h3 data-t="d2t">Que porter aujourd'hui ?</h3><p data-t="d2p">Chaque matin, Aura choisit une tenue avec tes vêtements selon la météo de ta ville et ton programme (bureau, week-end…), en évitant ce que tu as porté ces derniers jours.</p></div>
+      <div class="card"><div class="ic">🧥</div><h3 data-t="d3t">Garde-robe digitale</h3><p data-t="d3p">Ajoute tes vêtements en photo, sans limite. Aura les range par famille et par couleur, et sait ce que tu portes souvent ou jamais.</p></div>
+      <div class="card"><div class="ic">🪄</div><h3 data-t="d4t">Créer une tenue & Ma semaine</h3><p data-t="d4p">Aura crée des looks avec tes pièces pour chaque occasion. Enregistre tes tenues préférées et planifie ta semaine.</p></div>
+    </div>
+  </section>
+
+  <!-- STYLE TWIN -->
+  <section>
+    <div class="card">
+      <span class="kicker" data-t="k3">Exclusif My Style</span>
+      <h2 data-t="s3">Ton jumeau de style</h2>
+      <p class="lead" style="margin-bottom:10px" data-t="l3">Your Style Twin est une copie numérique de ton style : ta silhouette, tes mesures, ton visage, ton teint, tes goûts, ton budget, tes occasions et chaque pièce de ta garde-robe. C'est ce qui permet à Aura de te conseiller vraiment toi, et pas une femme en général.</p>
+      <p class="lead" style="margin-bottom:0" data-t="l3b">L'app t'indique à quel pourcentage ton jumeau est complet et ce qu'il reste à ajouter.</p>
+    </div>
+  </section>
+
+  <!-- SHOPPING -->
+  <section>
+    <span class="kicker" data-t="k4">Acheter mieux</span>
+    <h2 data-t="s4">Shopping malin</h2>
+    <div class="two">
+      <div class="card"><div class="ic">🛍️</div><h3 data-t="e1t">Boutique</h3><p data-t="e1p">Une sélection de pièces classées pour toi, en trois univers : Luxe, Tendance et Petits prix. Aura te montre ce qui correspond à ta silhouette, tes couleurs et ton budget.</p></div>
+      <div class="card"><div class="ic">💡</div><h3 data-t="e2t">Ça vaut le coup ?</h3><p data-t="e2p">Avant d'acheter, montre la pièce à Aura. Elle te dit si elle te va, si tu as déjà quelque chose de pareil, avec quoi la porter dans ta garde-robe et combien elle te coûtera par port. Verdict : bon achat, à réfléchir ou pas pour l'instant.</p></div>
+    </div>
+  </section>
+
+  <!-- GOLFE -->
+  <section>
+    <span class="kicker" data-t="k5">Pensé pour toi</span>
+    <h2 data-t="s5">Abaya & occasions du Golfe</h2>
+    <div class="two">
+      <div class="card"><div class="ic">🖤</div><h3 data-t="f1t">Ton abaya</h3><p data-t="f1p">La coupe d'abaya qui flatte ta silhouette, la bonne longueur pour ta taille, le tissu selon la saison, les couleurs de ta palette, et la façon de porter ta sheila selon la forme de ton visage.</p></div>
+      <div class="card"><div class="ic">🌙</div><h3 data-t="f2t">Les occasions</h3><p data-t="f2p">Mariage, henné, Ramadan, Garangao, Aïd, bureau, majlis, condoléances, fête nationale : le code de chaque occasion, quoi porter, quoi éviter, et Aura crée ta tenue.</p></div>
+    </div>
+  </section>
+
+  <!-- BEAUTÉ -->
+  <section>
+    <span class="kicker" data-t="k6">Beauté & élégance</span>
+    <h2 data-t="s6">Beauté</h2>
+    <div class="two">
+      <div class="card"><div class="ic">💄</div><h3 data-t="g1t">Make-up en images</h3><p data-t="g1p">Le maquillage qui sublime ta forme de visage, de jour et de soirée. Prends ton visage en photo, écris ta tenue (par exemple « robe de soirée rouge ») et reçois ta propre photo maquillée pour l'occasion.</p></div>
+      <div class="card"><div class="ic">🌷</div><h3 data-t="g2t">Étiquette</h3><p data-t="g2p">Les gestes d'une femme élégante : comment s'asseoir, marcher et parler avec grâce, avec des conseils simples à appliquer tout de suite.</p></div>
+    </div>
+  </section>
+
+  <!-- ZIFAFI -->
+  <section>
+    <div class="card zifafi">
+      <span class="kicker" data-t="k7">Espace mariée</span>
+      <h2>Zifafi Wedding</h2>
+      <p class="lead" data-t="l7">Your bridal style, guided by Aura. Ton style de mariée, à partir de ton profil My Style, sans refaire les tests.</p>
+      <div class="grid">
+        <div><h3 data-t="z1t">👰 Ta robe</h3><p data-t="z1p">Aura te propose 3 directions de robes expliquées, tu explores les silhouettes, ou tu lui montres la photo d'une robe pour son avis.</p></div>
+        <div><h3 data-t="z2t">💎 Ton look complet</h3><p data-t="z2p">Bijoux, voile, chaussures, coiffure, maquillage et bouquet assortis à ta robe, avec plusieurs looks à comparer.</p></div>
+        <div><h3 data-t="z3t">🎨 Couleurs & inspiration</h3><p data-t="z3p">Des harmonies de couleurs pour ton mariage et un tableau d'inspiration avec tes photos, qui restent sur ton téléphone.</p></div>
+        <div><h3 data-t="z4t">📝 Checklist & conseils</h3><p data-t="z4p">Une checklist de préparation à ton rythme et des conseils de mariée à enregistrer.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STYLISTE + NOUVEAUTÉS -->
+  <section>
+    <div class="two">
+      <div class="card"><div class="ic">✅</div><h3 data-t="h1t">Vérifié par une vraie styliste</h3><p data-t="h1p">Pour une question importante, envoie ta demande depuis l'app : une styliste professionnelle vérifie tes résultats ou ta tenue et te répond par écrit ou par message vocal.</p></div>
+      <div class="card"><div class="ic">📰</div><h3 data-t="h2t">Nouveautés fashion</h3><p data-t="h2p">Les événements mode et beauté à Doha, les dernières tendances et une sélection de magazines, mis à jour régulièrement.</p></div>
+    </div>
+  </section>
+
+  <!-- VIE PRIVÉE -->
+  <section>
+    <span class="kicker" data-t="k8">Ta vie privée d'abord</span>
+    <h2 data-t="s8">Tu gardes le contrôle</h2>
+    <div class="grid">
+      <div class="card"><div class="ic">🔒</div><p data-t="p1">Tes résultats et ta garde-robe sont enregistrés sur ton téléphone.</p></div>
+      <div class="card"><div class="ic">📷</div><p data-t="p2">Les photos sont facultatives : la silhouette peut se faire avec tes mesures, et le visage peut être caché sur la photo du corps.</p></div>
+      <div class="card"><div class="ic">🗑️</div><p data-t="p3">Un bouton efface toutes tes données, à tout moment.</p></div>
+    </div>
   </section>
 
   <section class="cta">
-    <h2>Sois parmi les premières</h2>
-    <p class="lead">Lancement prévu début novembre 2026.</p>
-    <a class="btn" href="mailto:contact@divadivina.app?subject=Liste%20d'attente%20My%20Style&body=Bonjour%2C%20je%20veux%20%C3%AAtre%20pr%C3%A9venue%20du%20lancement%20de%20My%20Style.%20Mon%20pr%C3%A9nom%20%3A%20">Je veux être prévenue</a>
+    <h2 data-t="ct">Sois parmi les premières</h2>
+    <p class="lead" data-t="cl">Inscris-toi pour être prévenue dès que My Style arrive sur Google Play.</p>
+    <a class="btn" data-mail data-t="b2" href="mailto:imendriss@divadivina.app">Je veux être prévenue</a>
   </section>
 
+  <!-- POLITIQUE -->
   <section class="policy" id="confidentialite">
-    <h2>Politique de confidentialité</h2>
-    <p>Dernière mise à jour : 30 octobre 2026. Cette politique s'applique à l'application My Style et à ce site.</p>
-
-    <h4>Données collectées</h4>
+    <h2 data-t="pt">Politique de confidentialité</h2>
+    <p data-t="pd">Dernière mise à jour : 3 novembre 2026. Cette politique s'applique à l'application My Style et à ce site.</p>
+    <h4 data-t="q1">Données collectées</h4>
     <ul>
-      <li>Ton adresse email et ton prénom, pour créer ton profil.</li>
-      <li>Les informations que tu choisis d'ajouter (taille, poids, préférences de style).</li>
-      <li>Les photos que tu envoies (visage, silhouette, tenues) pour les analyses.</li>
-      <li>Ta voix, uniquement pendant un appel avec Aura, pour comprendre ta demande.</li>
+      <li data-t="q1a">Ton prénom et, si tu crées un compte, ton adresse email.</li>
+      <li data-t="q1b">Les informations que tu choisis d'ajouter : taille, mesures, poids, préférences de style, budget, occasions.</li>
+      <li data-t="q1c">Les photos que tu envoies pour une analyse (visage, silhouette, tenue, vêtement, robe).</li>
+      <li data-t="q1d">Ta voix et tes messages, uniquement pendant une conversation avec Aura.</li>
     </ul>
-
-    <h4>Utilisation</h4>
-    <p>Ces données servent seulement à te donner tes analyses et conseils de style personnalisés. Les photos et la voix sont traitées par un service d'intelligence artificielle (Google Gemini) via un hébergement sécurisé (Cloudflare). Nous ne vendons jamais tes données.</p>
-
-    <h4>Liens vers des boutiques</h4>
-    <p>La Boutique peut contenir des liens vers des sites marchands. Quand tu cliques, tu quittes My Style et la politique de ce site s'applique.</p>
-
-    <h4>Conservation et suppression</h4>
-    <p>Tu peux demander à tout moment l'accès à tes données ou leur suppression complète (compte, photos, profil) en écrivant à l'adresse ci-dessous. Nous traitons la demande sous 30 jours.</p>
-
-    <h4>Mineures</h4>
-    <p>My Style s'adresse aux personnes de 18 ans et plus.</p>
-
-    <h4>Contact</h4>
-    <p>My Style — Doha, Qatar — <a href="mailto:contact@divadivina.app">contact@divadivina.app</a></p>
+    <h4 data-t="q2">Utilisation</h4>
+    <p data-t="q2p">Ces données servent seulement à te donner tes analyses et conseils personnalisés. Les photos sont analysées par Google Gemini et la voix d'Aura est produite par ElevenLabs, via un serveur sécurisé (Cloudflare). La mesure du visage se fait sur ton téléphone. La météo vient d'Open-Meteo, à partir de ta ville approximative. Nous ne vendons jamais tes données.</p>
+    <h4 data-t="q3">Vérification par une styliste</h4>
+    <p data-t="q3p">Si tu envoies une demande à la styliste, ta question, tes résultats et ta photo éventuelle sont gardés au maximum 60 jours, puis supprimés.</p>
+    <h4 data-t="q4">Liens vers des boutiques</h4>
+    <p data-t="q4p">La Boutique contient des liens vers des sites marchands partenaires. Quand tu cliques, tu quittes My Style et la politique de ce site s'applique. My Style peut recevoir une commission sur certains achats, sans coût pour toi.</p>
+    <h4 data-t="q5">Conservation et suppression</h4>
+    <p data-t="q5p">Tu peux tout effacer depuis ton Profil, ou demander l'accès à tes données ou leur suppression en écrivant à l'adresse ci-dessous. Nous traitons la demande sous 30 jours.</p>
+    <h4 data-t="q6">Âge</h4>
+    <p data-t="q6p">My Style s'adresse aux personnes de 18 ans et plus.</p>
+    <h4 data-t="q7">Contact</h4>
+    <p>My Style — Doha, Qatar — <a href="mailto:imendriss@divadivina.app">imendriss@divadivina.app</a></p>
   </section>
 
   <footer>
-    © 2026 My Style · <a href="#confidentialite">Confidentialité</a> · <a href="mailto:contact@divadivina.app">Contact</a>
+    © 2026 My Style · <a href="#confidentialite" data-t="fc">Confidentialité</a> · <a href="mailto:imendriss@divadivina.app" data-t="fk">Contact</a>
   </footer>
 </div>
+
+<script>
+var MAIL="imendriss@divadivina.app";
+var M={
+ fr:["Liste d'attente My Style","Bonjour, je veux être prévenue du lancement de My Style.\nMon prénom : \nMon pays : "],
+ en:["My Style waiting list","Hello, I'd like to be notified when My Style launches.\nMy first name: \nMy country: "],
+ ar:["قائمة انتظار My Style","مرحباً، أريد أن أعرف عند إطلاق تطبيق My Style.\nاسمي: \nبلدي: "]
+};
+// Traductions [anglais, arabe] ; le français est écrit directement dans la page
+var T={
+h1:["Your AI personal stylist, always with you","مستشارة أناقتك الشخصية بالذكاء الاصطناعي، معك دائماً"],
+hp:["Aura analyses your face, your silhouette and your colours, then helps you get dressed every day with your own wardrobe. She talks to you out loud, calls you by your first name and advises you like a real stylist.","تحلّل «أورا» شكل وجهك وقوامك وألوانك، ثم تساعدك كل يوم على اختيار إطلالتك من خزانتك أنتِ. تكلّمك بصوتها، وتناديك باسمك، وتنصحك مثل ستايلست حقيقية."],
+b1:["Join the waiting list","انضمّي إلى قائمة الانتظار"],
+hs:["Coming soon on Google Play · Free during the test phase","قريباً على Google Play · مجاني خلال فترة التجربة"],
+bg2:["For the whole Gulf","لكل دول الخليج"],
+bg3:["Photos optional","الصور اختيارية"],
+ah:["Meet Aura","تعرّفي على أورا"],
+aq:["“Hi, I'm your personal stylist. Let's begin our beautiful beauty journey.”","«هلا، أنا ستايلست حقّك الشخصية. خلّينا نبدأ رحلة الجمال الحلوة.»"],
+ap:["Call Aura like a stylist friend: she listens, looks at the photo you show her and answers out loud, in a few clear sentences. She knows your analyses, your wardrobe and your tastes, and she speaks French, English and Gulf Arabic. You can mute her voice at any time and type instead.","اتصلي بأورا كأنها صديقتك الستايلست: تسمعك، وتشوف الصورة اللي توريها لها، وترد عليك بصوتها بجمل قصيرة وواضحة. تعرف نتائج تحليلك وخزانتك وذوقك، وتتكلم الفرنسية والإنجليزية واللهجة الخليجية. تقدرين توقفين صوتها في أي وقت وتكتبين لها."],
+k1:["Only once","مرة واحدة فقط"],
+s1:["Your style analysis in 3 steps","تحليل ستايلك في ٣ خطوات"],
+l1:["You do it once and can redo it whenever you like. The whole app then uses it to advise you.","تسوينه مرة وحدة وتقدرين تعيدينه متى ما بغيتِ، والتطبيق كله يعتمد عليه في نصايحك."],
+c1t:["Face shape","شكل الوجه"],
+c1p:["One photo in good light: the app measures your face with 478 points (length, forehead, cheekbones, jaw) to find its true shape, using a professional stylist's method.","صورة وحدة في إضاءة واضحة: التطبيق يقيس وجهك بـ٤٧٨ نقطة (الطول، الجبهة، عظام الخد، الفك) ليعرف شكله الحقيقي، حسب طريقة ستايلست محترفة."],
+c1a:["Haircuts that suit you","قصّات الشعر المناسبة لك"],c1b:["Hair colour","لون الشعر"],c1c:["Glasses and sunglasses","النظارات والنظارات الشمسية"],c1d:["Make-up for your face shape","المكياج حسب شكل وجهك"],
+c2t:["Silhouette & Kibbe","القوام و«كيبي»"],
+c2p:["With a photo, or without one by simply giving your measurements. Hourglass, pear, inverted triangle, rectangle or round, plus your Kibbe type.","بصورة، أو بدون صورة بإدخال مقاساتك فقط. ساعة رملية، كمثرى، مثلث مقلوب، مستطيل أو دائري، مع نوعك حسب «كيبي»."],
+c2a:["Advice for your height, petite or tall","نصايح حسب طولك، قصيرة أو طويلة"],c2b:["Designed for plus sizes too","مناسبة للمقاسات الكبيرة أيضاً"],c2c:["Cuts to choose and to avoid","القصّات اللي تناسبك واللي تتجنبينها"],
+c3t:["Colour analysis","تحليل الألوان"],
+c3p:["Your undertone, your season and your personal palette: the colours that light up your skin and the ones to wear away from your face.","درجة بشرتك التحتية، وفصلك اللوني، وباليتك الخاصة: الألوان اللي تنوّر بشرتك واللي تلبسينها بعيد عن الوجه."],
+c3a:["Warm, cool or neutral undertone","درجة تحتية دافئة أو باردة أو محايدة"],c3b:["Your colour season","فصلك اللوني"],c3c:["Your palette to take shopping","باليتك تاخذينها معك للتسوق"],
+k2:["Every day","كل يوم"],
+s2:["Your everyday style","ستايلك اليومي"],
+l2:["Aura gets dressed with you, using the real pieces in your wardrobe.","أورا تختار معك لبسك من القطع الحقيقية في خزانتك."],
+d1t:["Outfit check","تقييم الإطلالة"],
+d1p:["Tell Aura the occasion, take a photo of your outfit: you get a score, what works and what to change. Then Aura talks it over with you.","قولي لأورا وين رايحة، وصوّري لبسك: تحصلين على تقييم، وش الحلو فيه ووش تغيّرين. وبعدها أورا تتناقش معك."],
+d2t:["What to wear today?","وش ألبس اليوم؟"],
+d2p:["Every morning, Aura picks an outfit from your clothes based on your city's weather and your plans (office, weekend…), avoiding what you've worn in the last few days.","كل صباح، أورا تختار لك إطلالة من ملابسك حسب طقس مدينتك وبرنامجك (دوام، ويكند…)، وتتجنب اللي لبستيه الأيام اللي طافت."],
+d3t:["Digital wardrobe","خزانة رقمية"],
+d3p:["Add your clothes with a photo, with no limit. Aura sorts them by type and colour, and knows what you wear often or never.","أضيفي ملابسك بالصور بدون حد. أورا ترتبها حسب النوع واللون، وتعرف وش تلبسين كثير ووش ما تلبسينه أبداً."],
+d4t:["Create an outfit & My week","سوّي إطلالة و«أسبوعي»"],
+d4p:["Aura creates looks with your pieces for every occasion. Save your favourite outfits and plan your week.","أورا تنسّق إطلالات من قطعك لكل مناسبة. احفظي إطلالاتك المفضلة ونظّمي أسبوعك."],
+k3:["Only on My Style","حصرياً في My Style"],
+s3:["Your Style Twin","توأم الستايل"],
+l3:["Your Style Twin is a digital copy of your style: your silhouette, measurements, face, skin tone, tastes, budget, occasions and every piece in your wardrobe. That's what lets Aura advise you, not women in general.","توأم الستايل نسخة رقمية من ستايلك: قوامك، مقاساتك، وجهك، بشرتك، ذوقك، ميزانيتك، مناسباتك، وكل قطعة في خزانتك. وهذا اللي يخلّي أورا تنصحك أنتِ بالذات، مو أي وحدة."],
+l3b:["The app shows you how complete your twin is and what's left to add.","التطبيق يوريك نسبة اكتمال توأمك ووش باقي تضيفين."],
+k4:["Buy better","تسوّقي أذكى"],
+s4:["Smart shopping","التسوق الذكي"],
+e1t:["Shop","المتجر"],
+e1p:["A selection of pieces sorted for you in three worlds: Luxury, Trendy and Budget. Aura shows you what suits your silhouette, colours and budget.","مختارات من القطع مرتبة لك في ثلاث عوالم: فاخر، ترند، وأسعار حلوة. أورا توريك اللي يناسب قوامك وألوانك وميزانيتك."],
+e2t:["Is it worth it?","تستاهل؟"],
+e2p:["Before you buy, show the piece to Aura. She tells you if it suits you, if you already own something similar, what to wear it with from your wardrobe and how much it will cost you per wear. Verdict: good buy, think about it, or not for now.","قبل لا تشترين، وري القطعة لأورا. تقول لك إذا تناسبك، وإذا عندك شي يشبهها، ووش تلبسين معها من خزانتك، وكم بتكلفك كل مرة تلبسينها. والحكم: شراء موفق، فكّري فيها، أو مو الحين."],
+k5:["Made for you","مصمّم لك"],
+s5:["Abaya & Gulf occasions","العباية ومناسبات الخليج"],
+f1t:["Your abaya","عبايتك"],
+f1p:["The abaya cut that flatters your silhouette, the right length for your height, the fabric for the season, the colours from your palette, and how to wear your sheila for your face shape.","قصّة العباية اللي تبرز قوامك، الطول المناسب لطولك، القماش حسب الموسم، ألوان باليتك، وطريقة لبس الشيلة حسب شكل وجهك."],
+f2t:["Occasions","المناسبات"],
+f2p:["Wedding, henna night, Ramadan, Garangao, Eid, office, majlis, condolences, national day: the dress code for each occasion, what to wear, what to avoid, and Aura creates your outfit.","العرس، ليلة الحنّا، رمضان، القرنقعوه، العيد، الدوام، المجلس، العزاء، اليوم الوطني: الكود لكل مناسبة، وش تلبسين ووش تتجنبين، وأورا تنسّق لك إطلالتك."],
+k6:["Beauty & elegance","الجمال والأناقة"],
+s6:["Beauty","الجمال"],
+g1t:["Make-up in pictures","المكياج بالصور"],
+g1p:["The make-up that flatters your face shape, for day and evening. Take a photo of your face, type your outfit (for example “red evening dress”) and get your own photo with the make-up for the occasion.","المكياج اللي يبرز شكل وجهك، للصباح وللسهرة. صوّري وجهك، واكتبي لبسك (مثلاً «فستان سهرة أحمر») وتوصلك صورتك أنتِ بالمكياج المناسب للمناسبة."],
+g2t:["Etiquette","الإتيكيت"],
+g2p:["The ways of an elegant woman: how to sit, walk and speak gracefully, with simple tips to apply right away.","حركات المرأة الأنيقة: كيف تجلسين وتمشين وتتكلمين برقي، بنصايح بسيطة تطبقينها على طول."],
+k7:["Bridal space","ركن العروس"],
+l7:["Your bridal style, guided by Aura. Built from your My Style profile, with no need to redo the tests.","ستايلك كعروس، بإرشاد أورا. من ملفك في My Style بدون ما تعيدين التحاليل."],
+z1t:["👰 Your dress","👰 فستانك"],
+z1p:["Aura suggests 3 explained dress directions, you explore the silhouettes, or show her a photo of a dress for her opinion.","أورا تقترح عليك ٣ اتجاهات للفستان مع الشرح، أو تستكشفين القصّات بنفسك، أو توريها صورة فستان وتعطيك رأيها."],
+z2t:["💎 Your complete look","💎 إطلالتك الكاملة"],
+z2p:["Jewellery, veil, shoes, hairstyle, make-up and bouquet matched to your dress, with several looks to compare.","المجوهرات، الطرحة، الحذاء، تسريحة الشعر، المكياج والمسكة متناسقة مع فستانك، مع أكثر من إطلالة للمقارنة."],
+z3t:["🎨 Colours & inspiration","🎨 الألوان والإلهام"],
+z3p:["Colour harmonies for your wedding and an inspiration board with your photos, which stay on your phone.","تناسقات ألوان لعرسك ولوحة إلهام بصورك، وتبقى في جوالك."],
+z4t:["📝 Checklist & tips","📝 قائمة التحضير والنصايح"],
+z4p:["A preparation checklist at your own pace and bridal tips to save.","قائمة تحضير على راحتك ونصايح للعروس تقدرين تحفظينها."],
+h1t:["Checked by a real stylist","تتأكد منها ستايلست حقيقية"],
+h1p:["For an important question, send your request from the app: a professional stylist checks your results or your outfit and answers in writing or with a voice message.","لأي سؤال مهم، أرسلي طلبك من التطبيق: ستايلست محترفة تراجع نتائجك أو إطلالتك وترد عليك كتابة أو برسالة صوتية."],
+h2t:["Fashion news","جديد الموضة"],
+h2p:["Fashion and beauty events in Doha, the latest trends and a selection of magazines, updated regularly.","فعاليات الموضة والجمال في الدوحة، آخر الترندات، ومختارات من المجلات، تتحدث باستمرار."],
+k8:["Your privacy first","خصوصيتك أولاً"],
+s8:["You stay in control","أنتِ المتحكمة"],
+p1:["Your results and wardrobe are saved on your phone.","نتائجك وخزانتك محفوظة في جوالك."],
+p2:["Photos are optional: your silhouette can be done with your measurements, and your face can be hidden on the body photo.","الصور اختيارية: تحليل القوام ممكن بالمقاسات، وتقدرين تخفين وجهك في صورة الجسم."],
+p3:["One button deletes all your data, at any time.","زر واحد يمسح كل بياناتك في أي وقت."],
+ct:["Be among the first","كوني من الأوائل"],
+cl:["Sign up to be notified as soon as My Style arrives on Google Play.","سجّلي عشان نخبرك أول ما ينزل My Style على Google Play."],
+b2:["Notify me","أبي أعرف أول وحدة"],
+pt:["Privacy policy","سياسة الخصوصية"],
+pd:["Last updated: 3 November 2026. This policy applies to the My Style app and this website.","آخر تحديث: ٣ نوفمبر ٢٠٢٦. تنطبق هذه السياسة على تطبيق My Style وهذا الموقع."],
+q1:["Data collected","البيانات التي نجمعها"],
+q1a:["Your first name and, if you create an account, your email address.","اسمك الأول، وبريدك الإلكتروني إذا أنشأتِ حساباً."],
+q1b:["The information you choose to add: height, measurements, weight, style preferences, budget, occasions.","المعلومات التي تختارين إضافتها: الطول، المقاسات، الوزن، تفضيلات الستايل، الميزانية، المناسبات."],
+q1c:["The photos you send for an analysis (face, silhouette, outfit, garment, dress).","الصور التي ترسلينها للتحليل (الوجه، القوام، الإطلالة، القطعة، الفستان)."],
+q1d:["Your voice and messages, only during a conversation with Aura.","صوتك ورسائلك، فقط أثناء المحادثة مع أورا."],
+q2:["Use","الاستخدام"],
+q2p:["This data is only used to give you your personalised analyses and advice. Photos are analysed by Google Gemini and Aura's voice is produced by ElevenLabs, through a secure server (Cloudflare). Face measurement happens on your phone. Weather comes from Open-Meteo, based on your approximate city. We never sell your data.","تُستخدم هذه البيانات فقط لتقديم تحليلاتك ونصائحك الشخصية. تُحلَّل الصور عبر Google Gemini ويُنتَج صوت أورا عبر ElevenLabs، من خلال خادم آمن (Cloudflare). قياس الوجه يتم على جوالك. معلومات الطقس من Open-Meteo حسب مدينتك التقريبية. لا نبيع بياناتك أبداً."],
+q3:["Check by a stylist","مراجعة الستايلست"],
+q3p:["If you send a request to the stylist, your question, results and any photo are kept for a maximum of 60 days, then deleted.","إذا أرسلتِ طلباً للستايلست، يُحفظ سؤالك ونتائجك وصورتك إن وُجدت لمدة ٦٠ يوماً كحد أقصى، ثم تُحذف."],
+q4:["Links to shops","روابط المتاجر"],
+q4p:["The Shop contains links to partner retail sites. When you click, you leave My Style and that site's policy applies. My Style may receive a commission on some purchases, at no cost to you.","يحتوي المتجر على روابط لمواقع شركاء. عند الضغط تغادرين My Style وتنطبق سياسة ذلك الموقع. قد يحصل My Style على عمولة من بعض المشتريات دون أي تكلفة عليك."],
+q5:["Retention and deletion","الاحتفاظ والحذف"],
+q5p:["You can erase everything from your Profile, or request access to or deletion of your data by writing to the address below. We handle requests within 30 days.","يمكنك مسح كل شيء من ملفك الشخصي، أو طلب الاطلاع على بياناتك أو حذفها بالكتابة إلى العنوان أدناه. نعالج الطلب خلال ٣٠ يوماً."],
+q6:["Age","العمر"],
+q6p:["My Style is intended for people aged 18 and over.","تطبيق My Style موجّه لمن هم في عمر ١٨ سنة فما فوق."],
+q7:["Contact","التواصل"],
+fc:["Privacy","الخصوصية"],
+fk:["Contact","تواصل معنا"]
+};
+var FR={};
+document.querySelectorAll("[data-t]").forEach(function(e){FR[e.dataset.t]=e.innerHTML});
+function setLang(l){
+  var i=l=="en"?0:l=="ar"?1:-1;
+  document.querySelectorAll("[data-t]").forEach(function(e){var k=e.dataset.t;e.innerHTML=(i<0||!T[k])?FR[k]:T[k][i]});
+  document.documentElement.lang=l;document.documentElement.dir=l=="ar"?"rtl":"ltr";
+  document.querySelectorAll(".langs button").forEach(function(b){b.classList.toggle("on",b.dataset.l==l)});
+  var m=M[l];document.querySelectorAll("[data-mail]").forEach(function(a){a.href="mailto:"+MAIL+"?subject="+encodeURIComponent(m[0])+"&body="+encodeURIComponent(m[1])});
+  try{localStorage.setItem("ms_site_lang",l)}catch(e){}
+}
+document.querySelectorAll(".langs button").forEach(function(b){b.onclick=function(){setLang(b.dataset.l)}});
+var q=new URLSearchParams(location.search).get("lang"),s=null;
+try{s=localStorage.getItem("ms_site_lang")}catch(e){}
+var n=(navigator.language||"fr").slice(0,2);
+setLang(["fr","en","ar"].indexOf(q)>=0?q:(s||(n=="ar"?"ar":n=="en"?"en":"fr")));
+</script>
 </body>
 </html>
