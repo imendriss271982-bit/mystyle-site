@@ -60,6 +60,10 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
   text-shadow:0 1px 2px rgba(60,40,10,.5);transition:transform .2s}
 .btn::before{content:"";position:absolute;left:8%;right:8%;top:2px;height:45%;max-height:24px;border-radius:40px;background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0))}
 .btn:hover{transform:translateY(-2px)}
+.acts{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+@media (max-width:720px){.acts{justify-content:center}}
+.btn.lite{background:rgba(255,255,255,.85);color:var(--gold-dark);text-shadow:none;border:1.5px solid rgba(184,145,74,.7);box-shadow:0 4px 14px rgba(118,90,42,.12)}
+.btn.lite::before{display:none}
 .small{font-size:13px;color:var(--soft);margin-top:12px}
 
 /* Sections & cartes ambre */
@@ -127,8 +131,9 @@ footer a,.policy a{color:var(--gold-dark)}
     <div>
       <h1 data-t="h1">Ta personal stylist IA, toujours avec toi</h1>
       <p data-t="hp">Aura analyse ton visage, ta silhouette et tes couleurs, puis t'aide chaque jour à t'habiller avec ta propre garde-robe. Elle te parle à voix haute, t'appelle par ton prénom et te conseille comme une vraie styliste.</p>
-      <a class="btn" data-t="b1" href="#inscription">Rejoindre la liste d'attente</a>
-      <div class="small" data-t="hs">Bientôt sur Google Play · Gratuite pendant la phase de test</div>
+      <div class="acts"><a class="btn" data-t="ba" href="https://imendriss271982-bit.github.io/mon-style/">Faire mon analyse gratuite</a>
+      <a class="btn lite" data-t="b1" href="#inscription">Être prévenue du lancement</a></div>
+      <div class="small" data-t="hs">Gratuite pendant la phase de test · S'ouvre dans ton navigateur, sans téléchargement · Bientôt sur Google Play</div>
       <div class="badges">
         <span class="badge">Français · English · عربي</span>
         <span class="badge" data-t="bg2">Pour tout le Golfe</span>
@@ -167,6 +172,7 @@ footer a,.policy a{color:var(--gold-dark)}
         <p data-t="c3p">Ton sous-ton, ta saison et ta palette personnelle : les couleurs qui illuminent ton teint et celles à porter loin du visage.</p>
         <ul><li data-t="c3a">Sous-ton chaud, froid ou neutre</li><li data-t="c3b">Ta saison de couleurs</li><li data-t="c3c">Ta palette à emporter en boutique</li></ul></div>
     </div>
+    <p style="text-align:center;margin-top:24px"><a class="btn" data-t="bc" href="https://imendriss271982-bit.github.io/mon-style/">Commencer mon analyse</a></p>
   </section>
 
   <!-- QUOTIDIEN -->
@@ -259,6 +265,7 @@ footer a,.policy a{color:var(--gold-dark)}
   <section class="cta" id="inscription">
     <h2 data-t="ct">Sois parmi les premières</h2>
     <p class="lead" data-t="cl">Inscris-toi pour être prévenue dès que My Style arrive sur Google Play.</p>
+    <p style="margin-bottom:22px"><a class="btn lite" data-t="bd" href="https://imendriss271982-bit.github.io/mon-style/">Ou essaie l'app maintenant →</a></p>
     <form class="card wl" id="wl" novalidate>
       <label><span data-t="fp">Prénom</span><input name="prenom" autocomplete="given-name" maxlength="40"></label>
       <label><span data-t="fe">Email</span><input name="email" type="email" autocomplete="email" required maxlength="254" dir="ltr"></label>
@@ -315,8 +322,11 @@ function msg(k){return MSG[k][LANG=="en"?1:LANG=="ar"?2:0]}
 var T={
 h1:["Your AI personal stylist, always with you","مستشارة أناقتك الشخصية بالذكاء الاصطناعي، معك دائماً"],
 hp:["Aura analyses your face, your silhouette and your colours, then helps you get dressed every day with your own wardrobe. She talks to you out loud, calls you by your first name and advises you like a real stylist.","تحلّل «أورا» شكل وجهك وقوامك وألوانك، ثم تساعدك كل يوم على اختيار إطلالتك من خزانتك أنتِ. تكلّمك بصوتها، وتناديك باسمك، وتنصحك مثل ستايلست حقيقية."],
-b1:["Join the waiting list","انضمّي إلى قائمة الانتظار"],
-hs:["Coming soon on Google Play · Free during the test phase","قريباً على Google Play · مجاني خلال فترة التجربة"],
+ba:["Get my free analysis","سوّي تحليلي المجاني"],
+b1:["Get notified at launch","أبي أعرف وقت الإطلاق"],
+bc:["Start my analysis","ابدئي تحليلي"],
+bd:["Or try the app now →","أو جرّبي التطبيق الحين ←"],
+hs:["Free during the test phase · Opens in your browser, no download · Coming soon on Google Play","مجاني خلال فترة التجربة · يفتح في المتصفح بدون تحميل · قريباً على Google Play"],
 bg2:["For the whole Gulf","لكل دول الخليج"],
 bg3:["Photos optional","الصور اختيارية"],
 ah:["Meet Aura","تعرّفي على أورا"],
