@@ -29,7 +29,7 @@ html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3,html[lang=ar] h4{font-family:
 @keyframes shine{0%{background-position:150% 0}100%{background-position:-150% 0}}
 @media (prefers-reduced-motion:reduce){.silk{animation-duration:60s}.silk::after{animation:none}}
 
-.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.wrap{max-width:1360px;margin:0 auto;padding:0 clamp(16px,4vw,56px)}
 
 /* En-tête */
 header{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:10px}
@@ -42,11 +42,11 @@ header{display:flex;align-items:center;justify-content:space-between;padding:16p
 .logo .st{font-family:'Cormorant Garamond',serif;font-weight:700;letter-spacing:3px;color:#3a2a1c;text-shadow:0 1px 0 #fff,0 3px 6px rgba(118,90,42,.3)}
 
 /* Hero */
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;padding:20px 0 40px}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center;padding:10px 0 30px;min-height:calc(100vh - 90px);min-height:calc(100svh - 90px)}
 .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5.5vw,54px);line-height:1.12;font-weight:700;margin-bottom:14px}
 .hero p{font-size:18px;color:var(--soft);margin-bottom:24px;font-weight:300}
 .hero-img{text-align:center}
-.hero-img img{width:100%;max-width:320px;height:auto;border-radius:50%;background:radial-gradient(circle,#fff 55%,rgba(255,255,255,0) 72%)}
+.hero-img img{width:100%;max-width:440px;height:auto;border-radius:50%;background:radial-gradient(circle,#fff 55%,rgba(255,255,255,0) 72%)}
 .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .badge{background:rgba(255,255,255,.8);border:1px solid rgba(201,150,60,.45);border-radius:20px;padding:4px 12px;font-size:13px;color:var(--gold-dark)}
 @media (max-width:720px){.hero{grid-template-columns:1fr;text-align:center}.hero-img{order:-1}.hero-img img{max-width:210px}.badges{justify-content:center}}
@@ -111,6 +111,23 @@ html[lang=ar] .quote{font-family:'Tajawal',sans-serif;font-style:normal}
 .policy h4{font-family:'Cormorant Garamond',serif;font-size:21px;margin:18px 0 4px}
 .policy p,.policy li{font-size:15px;color:var(--soft)}
 .policy ul{padding-inline-start:20px}
+/* Pleine page : sur ordinateur plus de colonnes, sur téléphone les cartes défilent sur le côté */
+@media (min-width:1000px){.grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}}
+@media (max-width:720px){
+  .grid,.two{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:6px 16px 14px;margin:0 -16px;scrollbar-width:none}
+  .grid::-webkit-scrollbar,.two::-webkit-scrollbar{display:none}
+  .grid>*,.two>*{flex:0 0 84%;scroll-snap-align:center}
+  section{padding:24px 0}
+  .hero{min-height:calc(100svh - 80px)}
+  .swipe{display:block;text-align:center;font-size:12px;color:var(--soft);margin-top:-4px}
+}
+.swipe{display:none}
+details.policy summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px}
+details.policy summary::-webkit-details-marker{display:none}
+details.policy summary h2{margin:0}
+details.policy summary::after{content:"+";font-size:28px;color:var(--gold-dark);line-height:1}
+details.policy[open] summary::after{content:"−"}
+details.policy[open] summary{margin-bottom:10px}
 footer{text-align:center;padding:24px 0 40px;font-size:14px;color:var(--soft)}
 footer a,.policy a{color:var(--gold-dark)}
 </style>
@@ -281,8 +298,8 @@ footer a,.policy a{color:var(--gold-dark)}
   </section>
 
   <!-- POLITIQUE -->
-  <section class="policy" id="confidentialite">
-    <h2 data-t="pt">Politique de confidentialité</h2>
+  <details class="policy" id="confidentialite">
+    <summary><h2 data-t="pt">Politique de confidentialité</h2></summary>
     <p data-t="pd">Dernière mise à jour : 3 novembre 2026. Cette politique s'applique à l'application My Style et à ce site.</p>
     <h4 data-t="q1">Données collectées</h4>
     <ul>
@@ -303,7 +320,7 @@ footer a,.policy a{color:var(--gold-dark)}
     <p data-t="q6p">My Style s'adresse aux personnes de 18 ans et plus.</p>
     <h4 data-t="q7">Contact</h4>
     <p>My Style — Doha, Qatar — <a href="mailto:imendriss@divadivina.app">imendriss@divadivina.app</a></p>
-  </section>
+  </details>
 
   <footer>
     © 2026 My Style · <a href="#confidentialite" data-t="fc">Confidentialité</a> · <a href="mailto:imendriss@divadivina.app" data-t="fk">Contact</a>
@@ -444,6 +461,8 @@ document.getElementById("wl").addEventListener("submit",function(ev){
   .catch(function(){m.className="msg err";m.textContent=msg("err")})
   .then(function(){btn.disabled=false});
 });
+function ouvrePol(){if(location.hash=="#confidentialite"){var d=document.getElementById("confidentialite");d.open=true;d.scrollIntoView()}}
+addEventListener("hashchange",ouvrePol);ouvrePol();
 document.querySelectorAll(".langs button").forEach(function(b){b.onclick=function(){setLang(b.dataset.l)}});
 var q=new URLSearchParams(location.search).get("lang"),s=null;
 try{s=localStorage.getItem("ms_site_lang")}catch(e){}
