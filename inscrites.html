@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mes inscrites — My Style</title>
+<link rel="icon" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#8c6d35;--ink:#292421;--soft:#6e6e6e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Jost',sans-serif;color:var(--ink);background:#f6efe3 url(fond-soie.webp) center/cover fixed;min-height:100vh;padding:20px 16px 40px}
+.box{max-width:900px;margin:0 auto;background:rgba(255,255,255,.93);border-radius:22px;padding:24px 18px;border:1.5px solid rgba(201,150,60,.55);box-shadow:0 0 22px rgba(185,116,42,.18)}
+h1{font-family:'Cormorant Garamond',serif;font-size:32px;margin-bottom:4px}
+.sub{color:var(--soft);margin-bottom:18px}
+input{font:400 16px 'Jost',sans-serif;padding:12px 14px;border-radius:14px;border:1px solid rgba(201,150,60,.55);width:100%;max-width:320px}
+.btn{display:inline-block;border:1px solid rgba(255,240,200,.9);border-radius:30px;padding:11px 22px;font:500 15px 'Jost',sans-serif;color:#fff;cursor:pointer;background:linear-gradient(180deg,#a8843f,#8c6d35 55%,#765a2a);margin:8px 6px 0 0}
+.btn.lite{background:#fff;color:var(--gold);border-color:rgba(201,150,60,.6)}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+.stat{background:#fff;border:1px solid #eadcc0;border-radius:14px;padding:10px 14px;min-width:110px}
+.stat b{display:block;font-size:24px;color:var(--gold)}
+.stat span{font-size:13px;color:var(--soft)}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid #eee}
+th{color:var(--soft);font-weight:500}
+td button{border:none;background:none;color:#a3392b;cursor:pointer;font-size:16px}
+.err{color:#a3392b;margin-top:10px;min-height:1.3em}
+.hide{display:none}
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>Mes inscrites</h1>
+  <p class="sub">Liste d'attente du site My Style. Page privée : il faut ton code de styliste.</p>
+
+  <div id="login">
+    <input id="code" type="password" placeholder="Ton code de styliste" autocomplete="current-password">
+    <br><button class="btn" id="go">Ouvrir</button>
+    <p class="err" id="lerr"></p>
+  </div>
+
+  <div id="app" class="hide">
+    <div class="stats" id="stats"></div>
+    <button class="btn" id="csv">Télécharger (Excel / CSV)</button>
+    <button class="btn lite" id="ref">Actualiser</button>
+    <button class="btn lite" id="out">Fermer</button>
+    <p class="err" id="aerr"></p>
+    <div class="tw"><table><thead><tr><th>Date</th><th>Prénom</th><th>Email</th><th>Pays</th><th>Langue</th><th></th></tr></thead><tbody id="rows"></tbody></table></div>
+  </div>
+</div>
+<script>
+var API="https://mon-style.imendriss271982.workers.dev",CODE="",LIST=[];
+function $(i){return document.getElementById(i)}
+function esc(t){return String(t||"").replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function post(body){return fetch(API+"/liste/admin",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(Object.assign({code:CODE},body))}).then(function(r){return r.json().then(function(j){return{s:r.status,j:j}})})}
+function charger(){
+  $("aerr").textContent="";
+  return post({action:"list"}).then(function(x){
+    if(x.s==401){sortir();$("lerr").textContent="Code incorrect.";return}
+    if(x.s!=200){$("aerr").textContent=x.j.erreur||"Erreur";return}
+    LIST=x.j.inscrites||[];afficher();
+  }).catch(function(){$("aerr").textContent="Pas de connexion, réessaie."});
+}
+function afficher(){
+  var LG={fr:"Français",en:"English",ar:"عربي"},semaine=Date.now()-7*864e5,pays={};
+  LIST.forEach(function(x){pays[x.pays||"—"]=(pays[x.pays||"—"]||0)+1});
+  var top=Object.keys(pays).sort(function(a,b){return pays[b]-pays[a]}).slice(0,3);
+  $("stats").innerHTML='<div class="stat"><b>'+LIST.length+'</b><span>inscrites</span></div>'+
+    '<div class="stat"><b>'+LIST.filter(function(x){return x.cree>semaine}).length+'</b><span>ces 7 derniers jours</span></div>'+
+    top.map(function(p){return '<div class="stat"><b>'+pays[p]+'</b><span>'+esc(p)+'</span></div>'}).join("");
+  $("rows").innerHTML=LIST.map(function(x,i){return '<tr><td>'+new Date(x.cree).toLocaleDateString("fr-FR")+'</td><td>'+esc(x.prenom)+'</td><td>'+esc(x.email)+'</td><td>'+esc(x.pays)+'</td><td>'+(LG[x.lang]||"")+'</td><td><button data-i="'+i+'" title="Supprimer">✕</button></td></tr>'}).join("")||'<tr><td colspan="6">Personne pour l’instant.</td></tr>';
+}
+function sortir(){CODE="";try{sessionStorage.removeItem("ms_code")}catch(e){}$("app").classList.add("hide");$("login").classList.remove("hide")}
+function entrer(c){CODE=c;$("lerr").textContent="";charger().then(function(){if(CODE){try{sessionStorage.setItem("ms_code",CODE)}catch(e){}$("login").classList.add("hide");$("app").classList.remove("hide")}})}
+$("go").onclick=function(){var c=$("code").value.trim();if(c)entrer(c)};
+$("code").onkeydown=function(e){if(e.key=="Enter")$("go").onclick()};
+$("ref").onclick=charger;$("out").onclick=sortir;
+$("rows").onclick=function(e){var i=e.target.dataset.i;if(i==null)return;var x=LIST[i];
+  if(!confirm("Supprimer "+x.email+" de la liste ?"))return;
+  post({action:"delete",email:x.email}).then(charger)};
+$("csv").onclick=function(){
+  var q=function(v){return '"'+String(v||"").replace(/"/g,'""')+'"'};
+  var lignes=[["Date","Prénom","Email","Pays","Langue"]].concat(LIST.map(function(x){return[new Date(x.cree).toISOString().slice(0,10),x.prenom,x.email,x.pays,x.lang]}));
+  var blob=new Blob(["﻿"+lignes.map(function(l){return l.map(q).join(";")}).join("\r\n")],{type:"text/csv;charset=utf-8"});
+  var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="inscrites-my-style.csv";a.click();
+};
+try{var s=sessionStorage.getItem("ms_code");if(s)entrer(s)}catch(e){}
+</script>
+</body>
+</html>

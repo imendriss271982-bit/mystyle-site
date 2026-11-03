@@ -92,6 +92,16 @@ html[lang=ar] .quote{font-family:'Tajawal',sans-serif;font-style:normal}
 .zifafi p{color:var(--soft);font-size:15px}
 
 .cta{text-align:center;padding:50px 0 60px}
+.wl{max-width:460px;margin:0 auto;text-align:start;display:grid;gap:14px}
+.wl label{display:grid;gap:4px;font-size:14px;color:var(--ink);font-weight:500}
+.wl input,.wl select{font:400 16px 'Jost','Tajawal',sans-serif;padding:12px 14px;border-radius:14px;border:1px solid rgba(201,150,60,.55);background:#fff;color:var(--ink);width:100%}
+.wl input:focus,.wl select:focus{outline:2px solid var(--gold-light);border-color:var(--gold-dark)}
+.wl .btn{width:100%;border:none;font-family:inherit}
+.wl .btn[disabled]{opacity:.6;cursor:wait}
+.wl .small{text-align:center;margin:0}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.msg{text-align:center;font-weight:500;min-height:1.4em}
+.msg.ok{color:#2f6b3a}.msg.err{color:#a3392b}
 .policy{background:rgba(255,255,255,.9);border-radius:22px;padding:30px 24px;margin-bottom:50px;border:1px solid rgba(201,150,60,.4)}
 .policy h2{text-align:start;font-size:30px}
 .policy h4{font-family:'Cormorant Garamond',serif;font-size:21px;margin:18px 0 4px}
@@ -117,7 +127,7 @@ footer a,.policy a{color:var(--gold-dark)}
     <div>
       <h1 data-t="h1">Ta personal stylist IA, toujours avec toi</h1>
       <p data-t="hp">Aura analyse ton visage, ta silhouette et tes couleurs, puis t'aide chaque jour à t'habiller avec ta propre garde-robe. Elle te parle à voix haute, t'appelle par ton prénom et te conseille comme une vraie styliste.</p>
-      <a class="btn" data-mail data-t="b1" href="mailto:imendriss@divadivina.app">Rejoindre la liste d'attente</a>
+      <a class="btn" data-t="b1" href="#inscription">Rejoindre la liste d'attente</a>
       <div class="small" data-t="hs">Bientôt sur Google Play · Gratuite pendant la phase de test</div>
       <div class="badges">
         <span class="badge">Français · English · عربي</span>
@@ -246,10 +256,21 @@ footer a,.policy a{color:var(--gold-dark)}
     </div>
   </section>
 
-  <section class="cta">
+  <section class="cta" id="inscription">
     <h2 data-t="ct">Sois parmi les premières</h2>
     <p class="lead" data-t="cl">Inscris-toi pour être prévenue dès que My Style arrive sur Google Play.</p>
-    <a class="btn" data-mail data-t="b2" href="mailto:imendriss@divadivina.app">Je veux être prévenue</a>
+    <form class="card wl" id="wl" novalidate>
+      <label><span data-t="fp">Prénom</span><input name="prenom" autocomplete="given-name" maxlength="40"></label>
+      <label><span data-t="fe">Email</span><input name="email" type="email" autocomplete="email" required maxlength="254" dir="ltr"></label>
+      <label><span data-t="fy">Pays</span><select name="pays">
+        <option value="Qatar" data-t="y1">Qatar</option><option value="Emirats" data-t="y2">Émirats arabes unis</option><option value="Arabie saoudite" data-t="y3">Arabie saoudite</option>
+        <option value="Koweit" data-t="y4">Koweït</option><option value="Bahrein" data-t="y5">Bahreïn</option><option value="Oman" data-t="y6">Oman</option><option value="Autre" data-t="y7">Autre pays</option>
+      </select></label>
+      <input name="site" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit" data-t="b2">Je veux être prévenue</button>
+      <p class="small" data-t="fn">Un seul email au lancement. Tu peux te désinscrire quand tu veux.</p>
+      <p class="msg" id="wlmsg" role="status"></p>
+    </form>
   </section>
 
   <!-- POLITIQUE -->
@@ -258,7 +279,7 @@ footer a,.policy a{color:var(--gold-dark)}
     <p data-t="pd">Dernière mise à jour : 3 novembre 2026. Cette politique s'applique à l'application My Style et à ce site.</p>
     <h4 data-t="q1">Données collectées</h4>
     <ul>
-      <li data-t="q1a">Ton prénom et, si tu crées un compte, ton adresse email.</li>
+      <li data-t="q1a">Ton prénom et ton adresse email (liste d'attente du site ou compte dans l'app).</li>
       <li data-t="q1b">Les informations que tu choisis d'ajouter : taille, mesures, poids, préférences de style, budget, occasions.</li>
       <li data-t="q1c">Les photos que tu envoies pour une analyse (visage, silhouette, tenue, vêtement, robe).</li>
       <li data-t="q1d">Ta voix et tes messages, uniquement pendant une conversation avec Aura.</li>
@@ -283,12 +304,13 @@ footer a,.policy a{color:var(--gold-dark)}
 </div>
 
 <script>
-var MAIL="imendriss@divadivina.app";
-var M={
- fr:["Liste d'attente My Style","Bonjour, je veux être prévenue du lancement de My Style.\nMon prénom : \nMon pays : "],
- en:["My Style waiting list","Hello, I'd like to be notified when My Style launches.\nMy first name: \nMy country: "],
- ar:["قائمة انتظار My Style","مرحباً، أريد أن أعرف عند إطلاق تطبيق My Style.\nاسمي: \nبلدي: "]
-};
+var API="https://mon-style.imendriss271982.workers.dev";
+var LANG="fr";
+var MSG={ok:["C'est noté ! Tu seras parmi les premières à découvrir My Style. ✨","You're on the list! You'll be among the first to discover My Style. ✨","تم! بتكونين من أوائل اللي يكتشفون My Style. ✨"],
+ deja:["Tu es déjà inscrite, merci ! ✨","You're already on the list, thank you! ✨","أنتِ مسجّلة من قبل، شكراً! ✨"],
+ email:["Vérifie ton adresse email.","Please check your email address.","تأكدي من بريدك الإلكتروني."],
+ err:["Petit souci de connexion, réessaie dans un instant.","Connection problem, please try again in a moment.","فيه مشكلة في الاتصال، حاولي مرة ثانية بعد شوي."]};
+function msg(k){return MSG[k][LANG=="en"?1:LANG=="ar"?2:0]}
 // Traductions [anglais, arabe] ; le français est écrit directement dans la page
 var T={
 h1:["Your AI personal stylist, always with you","مستشارة أناقتك الشخصية بالذكاء الاصطناعي، معك دائماً"],
@@ -370,7 +392,7 @@ b2:["Notify me","أبي أعرف أول وحدة"],
 pt:["Privacy policy","سياسة الخصوصية"],
 pd:["Last updated: 3 November 2026. This policy applies to the My Style app and this website.","آخر تحديث: ٣ نوفمبر ٢٠٢٦. تنطبق هذه السياسة على تطبيق My Style وهذا الموقع."],
 q1:["Data collected","البيانات التي نجمعها"],
-q1a:["Your first name and, if you create an account, your email address.","اسمك الأول، وبريدك الإلكتروني إذا أنشأتِ حساباً."],
+q1a:["Your first name and email address (website waiting list or app account).","اسمك الأول وبريدك الإلكتروني (قائمة انتظار الموقع أو حساب التطبيق)."],
 q1b:["The information you choose to add: height, measurements, weight, style preferences, budget, occasions.","المعلومات التي تختارين إضافتها: الطول، المقاسات، الوزن، تفضيلات الستايل، الميزانية، المناسبات."],
 q1c:["The photos you send for an analysis (face, silhouette, outfit, garment, dress).","الصور التي ترسلينها للتحليل (الوجه، القوام، الإطلالة، القطعة، الفستان)."],
 q1d:["Your voice and messages, only during a conversation with Aura.","صوتك ورسائلك، فقط أثناء المحادثة مع أورا."],
@@ -386,6 +408,9 @@ q6:["Age","العمر"],
 q6p:["My Style is intended for people aged 18 and over.","تطبيق My Style موجّه لمن هم في عمر ١٨ سنة فما فوق."],
 q7:["Contact","التواصل"],
 fc:["Privacy","الخصوصية"],
+fp:["First name","الاسم"],fe:["Email","البريد الإلكتروني"],fy:["Country","البلد"],
+y1:["Qatar","قطر"],y2:["United Arab Emirates","الإمارات"],y3:["Saudi Arabia","السعودية"],y4:["Kuwait","الكويت"],y5:["Bahrain","البحرين"],y6:["Oman","عُمان"],y7:["Other country","بلد آخر"],
+fn:["Just one email at launch. You can unsubscribe anytime.","إيميل واحد فقط عند الإطلاق، وتقدرين تلغين متى ما بغيتِ."],
 fk:["Contact","تواصل معنا"]
 };
 var FR={};
@@ -395,9 +420,20 @@ function setLang(l){
   document.querySelectorAll("[data-t]").forEach(function(e){var k=e.dataset.t;e.innerHTML=(i<0||!T[k])?FR[k]:T[k][i]});
   document.documentElement.lang=l;document.documentElement.dir=l=="ar"?"rtl":"ltr";
   document.querySelectorAll(".langs button").forEach(function(b){b.classList.toggle("on",b.dataset.l==l)});
-  var m=M[l];document.querySelectorAll("[data-mail]").forEach(function(a){a.href="mailto:"+MAIL+"?subject="+encodeURIComponent(m[0])+"&body="+encodeURIComponent(m[1])});
+  LANG=l;var mm=document.getElementById("wlmsg");if(mm)mm.textContent="";
   try{localStorage.setItem("ms_site_lang",l)}catch(e){}
 }
+document.getElementById("wl").addEventListener("submit",function(ev){
+  ev.preventDefault();var f=ev.target,m=document.getElementById("wlmsg"),btn=f.querySelector("button");
+  var email=f.email.value.trim();
+  if(!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(email)){m.className="msg err";m.textContent=msg("email");f.email.focus();return}
+  btn.disabled=true;m.className="msg";m.textContent="…";
+  fetch(API+"/liste/add",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email,prenom:f.prenom.value.trim(),pays:f.pays.value,lang:LANG,site:f.site.value})})
+  .then(function(r){return r.json().then(function(j){return {s:r.status,j:j}})})
+  .then(function(x){if(x.s==200&&x.j.ok){m.className="msg ok";m.textContent=msg(x.j.deja?"deja":"ok");f.reset()}else{m.className="msg err";m.textContent=msg(x.j&&x.j.code=="email"?"email":"err")}})
+  .catch(function(){m.className="msg err";m.textContent=msg("err")})
+  .then(function(){btn.disabled=false});
+});
 document.querySelectorAll(".langs button").forEach(function(b){b.onclick=function(){setLang(b.dataset.l)}});
 var q=new URLSearchParams(location.search).get("lang"),s=null;
 try{s=localStorage.getItem("ms_site_lang")}catch(e){}
