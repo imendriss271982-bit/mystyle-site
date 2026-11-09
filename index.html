@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>My Style — Ta personal stylist IA | Aura</title>
-<meta name="description" content="My Style : analyse de ton visage, de ta silhouette et de tes couleurs, garde-robe digitale, outfit check noté, abaya et occasions du Golfe, espace mariée Zifafi Wedding, et Aura, ta personal stylist IA qui te parle en français, anglais et arabe.">
-<meta property="og:title" content="My Style — Ta personal stylist IA">
-<meta property="og:description" content="Aura analyse ton visage, ta silhouette et tes couleurs, puis t'habille chaque jour avec ta propre garde-robe.">
-<meta property="og:image" content="https://mystyle.divadivina.app/logo-my-style.jpg">
+<title>Diva Divina — Ta personal stylist IA | Diva</title>
+<meta name="description" content="Diva Divina : analyse de ton visage, de ta silhouette et de tes couleurs, garde-robe digitale, outfit check noté, abaya et occasions du Golfe, espace mariée Zifafi Wedding, et Diva, ta personal stylist IA qui te parle en français, anglais et arabe.">
+<meta property="og:title" content="Diva Divina — Ta personal stylist IA">
+<meta property="og:description" content="Diva analyse ton visage, ta silhouette et tes couleurs, puis t'habille chaque jour avec ta propre garde-robe.">
+<meta property="og:image" content="https://mystyle.divadivina.app/logo-dd-1024.png">
 <link rel="icon" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Great+Vibes&family=Jost:wght@300;400;500&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -35,9 +35,13 @@ html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3,html[lang=ar] h4{font-family:
 header{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:10px}
 .langs{display:flex;gap:6px}
 .langs button{border:1px solid rgba(201,150,60,.6);background:#fff;color:var(--gold-dark);border-radius:20px;padding:6px 12px;font:500 14px 'Jost','Tajawal',sans-serif;cursor:pointer}
-@media (max-width:420px){.langs{gap:4px}.langs button{padding:5px 9px;font-size:13px}.logo .st{letter-spacing:1.5px}}
+@media (max-width:420px){.langs{gap:4px}.langs button{padding:5px 9px;font-size:13px}.ddmark{height:34px}.brand{gap:8px}.logo .my{font-size:30px}.logo .st{font-size:13px;letter-spacing:.22em!important;margin-right:-.22em}}
 .langs button.on{background:var(--gold-dark);color:#fff}
-.logo{font-size:clamp(28px,7vw,52px);line-height:1.1;padding:4px 6px;white-space:nowrap;direction:ltr}
+.brand{display:flex;align-items:center;gap:12px}
+.ddmark{height:clamp(38px,6vw,56px);width:auto;flex:none;filter:drop-shadow(0 2px 3px rgba(84,58,20,.2))}
+.logo{display:inline-flex;flex-direction:column;align-items:center;line-height:1;padding:4px 2px;white-space:nowrap;direction:ltr}
+.logo .my{font-size:clamp(34px,5.4vw,50px);margin-bottom:-6px}
+.logo .st{font-size:clamp(14px,2vw,20px);letter-spacing:.34em!important;margin-right:-.34em}
 .logo .my{font-family:'Great Vibes',cursive;font-weight:400;background:linear-gradient(180deg,#e8cf8f,#b8914a 55%,#765a2a);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 2px rgba(118,90,42,.35));padding:0 6px}
 .logo .st{font-family:'Cormorant Garamond',serif;font-weight:700;letter-spacing:3px;color:#3a2a1c;text-shadow:0 1px 0 #fff,0 3px 6px rgba(118,90,42,.3)}
 
@@ -137,7 +141,7 @@ footer a,.policy a{color:var(--gold-dark)}
 
 <div class="wrap">
   <header>
-    <div class="logo" aria-label="My Style"><span class="my">My</span><span class="st">STYLE</span></div>
+    <div class="brand"><img class="ddmark" src="logo-dd.svg" alt="" aria-hidden="true" width="400" height="240"><div class="logo" role="img" aria-label="Diva Divina"><span class="my" aria-hidden="true">Diva</span><span class="st" aria-hidden="true">DIVINA</span></div></div>
     <div class="langs" role="group" aria-label="Langue">
       <button data-l="fr">FR</button><button data-l="en">EN</button><button data-l="ar">عربي</button>
     </div>
@@ -147,7 +151,7 @@ footer a,.policy a{color:var(--gold-dark)}
   <section class="hero">
     <div>
       <h1 data-t="h1">Ta personal stylist IA, toujours avec toi</h1>
-      <p data-t="hp">Aura analyse ton visage, ta silhouette et tes couleurs, puis t'aide chaque jour à t'habiller avec ta propre garde-robe. Elle te parle à voix haute, t'appelle par ton prénom et te conseille comme une vraie styliste.</p>
+      <p data-t="hp">Diva analyse ton visage, ta silhouette et tes couleurs, puis t'aide chaque jour à t'habiller avec ta propre garde-robe. Elle te parle à voix haute, t'appelle par ton prénom et te conseille comme une vraie styliste.</p>
       <div class="acts"><a class="btn" data-t="ba" href="https://imendriss271982-bit.github.io/mon-style/">Faire mon analyse gratuite</a>
       <a class="btn lite" data-t="b1" href="#inscription">Être prévenue du lancement</a></div>
       <div class="small" data-t="hs">Gratuite pendant la phase de test · S'ouvre dans ton navigateur, sans téléchargement · Bientôt sur Google Play</div>
@@ -157,7 +161,7 @@ footer a,.policy a{color:var(--gold-dark)}
         <span class="badge" data-t="bg3">Photos facultatives</span>
       </div>
     </div>
-    <div class="hero-img"><img src="aura-bust.webp" alt="Aura, la styliste IA de My Style" width="320" height="308"></div>
+    <div class="hero-img"><img src="aura-bust.webp" alt="Diva, la styliste IA de Diva Divina" width="320" height="308"></div>
   </section>
 
   <!-- AURA -->
@@ -166,9 +170,9 @@ footer a,.policy a{color:var(--gold-dark)}
       <img src="aura-bust.webp" alt="" loading="lazy">
       <div>
         <span class="kicker">My Stylist</span>
-        <h2 data-t="ah">Rencontre Aura</h2>
+        <h2 data-t="ah">Rencontre Diva</h2>
         <p class="quote" data-t="aq">« Salut, je suis ta personal stylist. Commençons notre belle aventure de la beauté. »</p>
-        <p data-t="ap">Appelle Aura comme une amie styliste : elle t'écoute, regarde la photo que tu lui montres et te répond à voix haute, en quelques phrases claires. Elle connaît tes analyses, ta garde-robe et tes goûts, et elle parle français, anglais et arabe du Golfe. Tu peux couper sa voix à tout moment et lui écrire.</p>
+        <p data-t="ap">Appelle Diva comme une amie styliste : elle t'écoute, regarde la photo que tu lui montres et te répond à voix haute, en quelques phrases claires. Elle connaît tes analyses, ta garde-robe et tes goûts, et elle parle français, anglais et arabe du Golfe. Tu peux couper sa voix à tout moment et lui écrire.</p>
       </div>
     </div>
   </section>
@@ -196,21 +200,21 @@ footer a,.policy a{color:var(--gold-dark)}
   <section>
     <span class="kicker" data-t="k2">Chaque jour</span>
     <h2 data-t="s2">Ton style au quotidien</h2>
-    <p class="lead" data-t="l2">Aura s'habille avec toi, avec les vraies pièces de ton armoire.</p>
+    <p class="lead" data-t="l2">Diva s'habille avec toi, avec les vraies pièces de ton armoire.</p>
     <div class="grid">
-      <div class="card"><div class="ic">📸</div><h3 data-t="d1t">Outfit check</h3><p data-t="d1p">Dis à Aura pour quelle occasion tu t'habilles, prends ta tenue en photo : tu reçois une note, ce qui va bien et ce qu'il faut changer. Ensuite, Aura en discute avec toi.</p></div>
-      <div class="card"><div class="ic">☀️</div><h3 data-t="d2t">Que porter aujourd'hui ?</h3><p data-t="d2p">Chaque matin, Aura choisit une tenue avec tes vêtements selon la météo de ta ville et ton programme (bureau, week-end…), en évitant ce que tu as porté ces derniers jours.</p></div>
-      <div class="card"><div class="ic">🧥</div><h3 data-t="d3t">Garde-robe digitale</h3><p data-t="d3p">Ajoute tes vêtements en photo, sans limite. Aura les range par famille et par couleur, et sait ce que tu portes souvent ou jamais.</p></div>
-      <div class="card"><div class="ic">🪄</div><h3 data-t="d4t">Créer une tenue & Ma semaine</h3><p data-t="d4p">Aura crée des looks avec tes pièces pour chaque occasion. Enregistre tes tenues préférées et planifie ta semaine.</p></div>
+      <div class="card"><div class="ic">📸</div><h3 data-t="d1t">Outfit check</h3><p data-t="d1p">Dis à Diva pour quelle occasion tu t'habilles, prends ta tenue en photo : tu reçois une note, ce qui va bien et ce qu'il faut changer. Ensuite, Diva en discute avec toi.</p></div>
+      <div class="card"><div class="ic">☀️</div><h3 data-t="d2t">Que porter aujourd'hui ?</h3><p data-t="d2p">Chaque matin, Diva choisit une tenue avec tes vêtements selon la météo de ta ville et ton programme (bureau, week-end…), en évitant ce que tu as porté ces derniers jours.</p></div>
+      <div class="card"><div class="ic">🧥</div><h3 data-t="d3t">Garde-robe digitale</h3><p data-t="d3p">Ajoute tes vêtements en photo, sans limite. Diva les range par famille et par couleur, et sait ce que tu portes souvent ou jamais.</p></div>
+      <div class="card"><div class="ic">🪄</div><h3 data-t="d4t">Créer une tenue & Ma semaine</h3><p data-t="d4p">Diva crée des looks avec tes pièces pour chaque occasion. Enregistre tes tenues préférées et planifie ta semaine.</p></div>
     </div>
   </section>
 
   <!-- STYLE TWIN -->
   <section>
     <div class="card">
-      <span class="kicker" data-t="k3">Exclusif My Style</span>
+      <span class="kicker" data-t="k3">Exclusif Diva Divina</span>
       <h2 data-t="s3">Ton jumeau de style</h2>
-      <p class="lead" style="margin-bottom:10px" data-t="l3">Your Style Twin est une copie numérique de ton style : ta silhouette, tes mesures, ton visage, ton teint, tes goûts, ton budget, tes occasions et chaque pièce de ta garde-robe. C'est ce qui permet à Aura de te conseiller vraiment toi, et pas une femme en général.</p>
+      <p class="lead" style="margin-bottom:10px" data-t="l3">Your Style Twin est une copie numérique de ton style : ta silhouette, tes mesures, ton visage, ton teint, tes goûts, ton budget, tes occasions et chaque pièce de ta garde-robe. C'est ce qui permet à Diva de te conseiller vraiment toi, et pas une femme en général.</p>
       <p class="lead" style="margin-bottom:0" data-t="l3b">L'app t'indique à quel pourcentage ton jumeau est complet et ce qu'il reste à ajouter.</p>
     </div>
   </section>
@@ -220,8 +224,8 @@ footer a,.policy a{color:var(--gold-dark)}
     <span class="kicker" data-t="k4">Acheter mieux</span>
     <h2 data-t="s4">Shopping malin</h2>
     <div class="two">
-      <div class="card"><div class="ic">🛍️</div><h3 data-t="e1t">Boutique</h3><p data-t="e1p">Une sélection de pièces classées pour toi, en trois univers : Luxe, Tendance et Petits prix. Aura te montre ce qui correspond à ta silhouette, tes couleurs et ton budget.</p></div>
-      <div class="card"><div class="ic">💡</div><h3 data-t="e2t">Ça vaut le coup ?</h3><p data-t="e2p">Avant d'acheter, montre la pièce à Aura. Elle te dit si elle te va, si tu as déjà quelque chose de pareil, avec quoi la porter dans ta garde-robe et combien elle te coûtera par port. Verdict : bon achat, à réfléchir ou pas pour l'instant.</p></div>
+      <div class="card"><div class="ic">🛍️</div><h3 data-t="e1t">Boutique</h3><p data-t="e1p">Une sélection de pièces classées pour toi, en trois univers : Luxe, Tendance et Petits prix. Diva te montre ce qui correspond à ta silhouette, tes couleurs et ton budget.</p></div>
+      <div class="card"><div class="ic">💡</div><h3 data-t="e2t">Ça vaut le coup ?</h3><p data-t="e2p">Avant d'acheter, montre la pièce à Diva. Elle te dit si elle te va, si tu as déjà quelque chose de pareil, avec quoi la porter dans ta garde-robe et combien elle te coûtera par port. Verdict : bon achat, à réfléchir ou pas pour l'instant.</p></div>
     </div>
   </section>
 
@@ -231,7 +235,7 @@ footer a,.policy a{color:var(--gold-dark)}
     <h2 data-t="s5">Abaya & occasions du Golfe</h2>
     <div class="two">
       <div class="card"><div class="ic">🖤</div><h3 data-t="f1t">Ton abaya</h3><p data-t="f1p">La coupe d'abaya qui flatte ta silhouette, la bonne longueur pour ta taille, le tissu selon la saison, les couleurs de ta palette, et la façon de porter ta sheila selon la forme de ton visage.</p></div>
-      <div class="card"><div class="ic">🌙</div><h3 data-t="f2t">Les occasions</h3><p data-t="f2p">Mariage, henné, Ramadan, Garangao, Aïd, bureau, majlis, condoléances, fête nationale : le code de chaque occasion, quoi porter, quoi éviter, et Aura crée ta tenue.</p></div>
+      <div class="card"><div class="ic">🌙</div><h3 data-t="f2t">Les occasions</h3><p data-t="f2p">Mariage, henné, Ramadan, Garangao, Aïd, bureau, majlis, condoléances, fête nationale : le code de chaque occasion, quoi porter, quoi éviter, et Diva crée ta tenue.</p></div>
     </div>
   </section>
 
@@ -250,9 +254,9 @@ footer a,.policy a{color:var(--gold-dark)}
     <div class="card zifafi">
       <span class="kicker" data-t="k7">Espace mariée</span>
       <h2>Zifafi Wedding</h2>
-      <p class="lead" data-t="l7">Your bridal style, guided by Aura. Ton style de mariée, à partir de ton profil My Style, sans refaire les tests.</p>
+      <p class="lead" data-t="l7">Your bridal style, guided by Diva. Ton style de mariée, à partir de ton profil Diva Divina, sans refaire les tests.</p>
       <div class="grid">
-        <div><h3 data-t="z1t">👰 Ta robe</h3><p data-t="z1p">Aura te propose 3 directions de robes expliquées, tu explores les silhouettes, ou tu lui montres la photo d'une robe pour son avis.</p></div>
+        <div><h3 data-t="z1t">👰 Ta robe</h3><p data-t="z1p">Diva te propose 3 directions de robes expliquées, tu explores les silhouettes, ou tu lui montres la photo d'une robe pour son avis.</p></div>
         <div><h3 data-t="z2t">💎 Ton look complet</h3><p data-t="z2p">Bijoux, voile, chaussures, coiffure, maquillage et bouquet assortis à ta robe, avec plusieurs looks à comparer.</p></div>
         <div><h3 data-t="z3t">🎨 Couleurs & inspiration</h3><p data-t="z3p">Des harmonies de couleurs pour ton mariage et un tableau d'inspiration avec tes photos, qui restent sur ton téléphone.</p></div>
         <div><h3 data-t="z4t">📝 Checklist & conseils</h3><p data-t="z4p">Une checklist de préparation à ton rythme et des conseils de mariée à enregistrer.</p></div>
@@ -281,7 +285,7 @@ footer a,.policy a{color:var(--gold-dark)}
 
   <section class="cta" id="inscription">
     <h2 data-t="ct">Sois parmi les premières</h2>
-    <p class="lead" data-t="cl">Inscris-toi pour être prévenue dès que My Style arrive sur Google Play.</p>
+    <p class="lead" data-t="cl">Inscris-toi pour être prévenue dès que Diva Divina arrive sur Google Play.</p>
     <p style="margin-bottom:22px"><a class="btn lite" data-t="bd" href="https://imendriss271982-bit.github.io/mon-style/">Ou essaie l'app maintenant →</a></p>
     <form class="card wl" id="wl" novalidate>
       <label><span data-t="fp">Prénom</span><input name="prenom" autocomplete="given-name" maxlength="40"></label>
@@ -300,37 +304,37 @@ footer a,.policy a{color:var(--gold-dark)}
   <!-- POLITIQUE -->
   <details class="policy" id="confidentialite">
     <summary><h2 data-t="pt">Politique de confidentialité</h2></summary>
-    <p data-t="pd">Dernière mise à jour : 3 novembre 2026. Cette politique s'applique à l'application My Style et à ce site.</p>
+    <p data-t="pd">Dernière mise à jour : 3 novembre 2026. Cette politique s'applique à l'application Diva Divina et à ce site.</p>
     <h4 data-t="q1">Données collectées</h4>
     <ul>
       <li data-t="q1a">Ton prénom et ton adresse email (liste d'attente du site ou compte dans l'app).</li>
       <li data-t="q1b">Les informations que tu choisis d'ajouter : taille, mesures, poids, préférences de style, budget, occasions.</li>
       <li data-t="q1c">Les photos que tu envoies pour une analyse (visage, silhouette, tenue, vêtement, robe).</li>
-      <li data-t="q1d">Ta voix et tes messages, uniquement pendant une conversation avec Aura.</li>
+      <li data-t="q1d">Ta voix et tes messages, uniquement pendant une conversation avec Diva.</li>
     </ul>
     <h4 data-t="q2">Utilisation</h4>
-    <p data-t="q2p">Ces données servent seulement à te donner tes analyses et conseils personnalisés. Les photos sont analysées par Google Gemini et la voix d'Aura est produite par ElevenLabs, via un serveur sécurisé (Cloudflare). La mesure du visage se fait sur ton téléphone. La météo vient d'Open-Meteo, à partir de ta ville approximative. Nous ne vendons jamais tes données.</p>
+    <p data-t="q2p">Ces données servent seulement à te donner tes analyses et conseils personnalisés. Les photos sont analysées par Google Gemini et la voix de Diva est produite par ElevenLabs, via un serveur sécurisé (Cloudflare). La mesure du visage se fait sur ton téléphone. La météo vient d'Open-Meteo, à partir de ta ville approximative. Nous ne vendons jamais tes données.</p>
     <h4 data-t="q3">Vérification par une styliste</h4>
     <p data-t="q3p">Si tu envoies une demande à la styliste, ta question, tes résultats et ta photo éventuelle sont gardés au maximum 60 jours, puis supprimés.</p>
     <h4 data-t="q4">Liens vers des boutiques</h4>
-    <p data-t="q4p">La Boutique contient des liens vers des sites marchands partenaires. Quand tu cliques, tu quittes My Style et la politique de ce site s'applique. My Style peut recevoir une commission sur certains achats, sans coût pour toi.</p>
+    <p data-t="q4p">La Boutique contient des liens vers des sites marchands partenaires. Quand tu cliques, tu quittes Diva Divina et la politique de ce site s'applique. Diva Divina peut recevoir une commission sur certains achats, sans coût pour toi.</p>
     <h4 data-t="q5">Conservation et suppression</h4>
     <p data-t="q5p">Tu peux tout effacer depuis ton Profil, ou demander l'accès à tes données ou leur suppression en écrivant à l'adresse ci-dessous. Nous traitons la demande sous 30 jours.</p>
     <h4 data-t="q6">Âge</h4>
-    <p data-t="q6p">My Style s'adresse aux personnes de 18 ans et plus.</p>
+    <p data-t="q6p">Diva Divina s'adresse aux personnes de 18 ans et plus.</p>
     <h4 data-t="q7">Contact</h4>
-    <p>My Style — Doha, Qatar — <a href="mailto:imendriss@divadivina.app">imendriss@divadivina.app</a></p>
+    <p>Diva Divina — Doha, Qatar — <a href="mailto:imendriss@divadivina.app">imendriss@divadivina.app</a></p>
   </details>
 
   <footer>
-    © 2026 My Style · <a href="#confidentialite" data-t="fc">Confidentialité</a> · <a href="mailto:imendriss@divadivina.app" data-t="fk">Contact</a>
+    © 2026 Diva Divina · <a href="#confidentialite" data-t="fc">Confidentialité</a> · <a href="mailto:imendriss@divadivina.app" data-t="fk">Contact</a>
   </footer>
 </div>
 
 <script>
 var API="https://mon-style.imendriss271982.workers.dev";
 var LANG="fr";
-var MSG={ok:["C'est noté ! Tu seras parmi les premières à découvrir My Style. ✨","You're on the list! You'll be among the first to discover My Style. ✨","تم! بتكونين من أوائل اللي يكتشفون My Style. ✨"],
+var MSG={ok:["C'est noté ! Tu seras parmi les premières à découvrir Diva Divina. ✨","You're on the list! You'll be among the first to discover Diva Divina. ✨","تم! بتكونين من أوائل اللي يكتشفون Diva Divina. ✨"],
  deja:["Tu es déjà inscrite, merci ! ✨","You're already on the list, thank you! ✨","أنتِ مسجّلة من قبل، شكراً! ✨"],
  email:["Vérifie ton adresse email.","Please check your email address.","تأكدي من بريدك الإلكتروني."],
  err:["Petit souci de connexion, réessaie dans un instant.","Connection problem, please try again in a moment.","فيه مشكلة في الاتصال، حاولي مرة ثانية بعد شوي."]};
@@ -338,7 +342,7 @@ function msg(k){return MSG[k][LANG=="en"?1:LANG=="ar"?2:0]}
 // Traductions [anglais, arabe] ; le français est écrit directement dans la page
 var T={
 h1:["Your AI personal stylist, always with you","مستشارة أناقتك الشخصية بالذكاء الاصطناعي، معك دائماً"],
-hp:["Aura analyses your face, your silhouette and your colours, then helps you get dressed every day with your own wardrobe. She talks to you out loud, calls you by your first name and advises you like a real stylist.","تحلّل «أورا» شكل وجهك وقوامك وألوانك، ثم تساعدك كل يوم على اختيار إطلالتك من خزانتك أنتِ. تكلّمك بصوتها، وتناديك باسمك، وتنصحك مثل ستايلست حقيقية."],
+hp:["Diva analyses your face, your silhouette and your colours, then helps you get dressed every day with your own wardrobe. She talks to you out loud, calls you by your first name and advises you like a real stylist.","تحلّل «ديفا» شكل وجهك وقوامك وألوانك، ثم تساعدك كل يوم على اختيار إطلالتك من خزانتك أنتِ. تكلّمك بصوتها، وتناديك باسمك، وتنصحك مثل ستايلست حقيقية."],
 ba:["Get my free analysis","سوّي تحليلي المجاني"],
 b1:["Get notified at launch","أبي أعرف وقت الإطلاق"],
 bc:["Start my analysis","ابدئي تحليلي"],
@@ -346,9 +350,9 @@ bd:["Or try the app now →","أو جرّبي التطبيق الحين ←"],
 hs:["Free during the test phase · Opens in your browser, no download · Coming soon on Google Play","مجاني خلال فترة التجربة · يفتح في المتصفح بدون تحميل · قريباً على Google Play"],
 bg2:["For the whole Gulf","لكل دول الخليج"],
 bg3:["Photos optional","الصور اختيارية"],
-ah:["Meet Aura","تعرّفي على أورا"],
+ah:["Meet Diva","تعرّفي على ديفا"],
 aq:["“Hi, I'm your personal stylist. Let's begin our beautiful beauty journey.”","«هلا، أنا ستايلست حقّك الشخصية. خلّينا نبدأ رحلة الجمال الحلوة.»"],
-ap:["Call Aura like a stylist friend: she listens, looks at the photo you show her and answers out loud, in a few clear sentences. She knows your analyses, your wardrobe and your tastes, and she speaks French, English and Gulf Arabic. You can mute her voice at any time and type instead.","اتصلي بأورا كأنها صديقتك الستايلست: تسمعك، وتشوف الصورة اللي توريها لها، وترد عليك بصوتها بجمل قصيرة وواضحة. تعرف نتائج تحليلك وخزانتك وذوقك، وتتكلم الفرنسية والإنجليزية واللهجة الخليجية. تقدرين توقفين صوتها في أي وقت وتكتبين لها."],
+ap:["Call Diva like a stylist friend: she listens, looks at the photo you show her and answers out loud, in a few clear sentences. She knows your analyses, your wardrobe and your tastes, and she speaks French, English and Gulf Arabic. You can mute her voice at any time and type instead.","اتصلي بديفا كأنها صديقتك الستايلست: تسمعك، وتشوف الصورة اللي توريها لها، وترد عليك بصوتها بجمل قصيرة وواضحة. تعرف نتائج تحليلك وخزانتك وذوقك، وتتكلم الفرنسية والإنجليزية واللهجة الخليجية. تقدرين توقفين صوتها في أي وقت وتكتبين لها."],
 k1:["Only once","مرة واحدة فقط"],
 s1:["Your style analysis in 3 steps","تحليل ستايلك في ٣ خطوات"],
 l1:["You do it once and can redo it whenever you like. The whole app then uses it to advise you.","تسوينه مرة وحدة وتقدرين تعيدينه متى ما بغيتِ، والتطبيق كله يعتمد عليه في نصايحك."],
@@ -363,31 +367,31 @@ c3p:["Your undertone, your season and your personal palette: the colours that li
 c3a:["Warm, cool or neutral undertone","درجة تحتية دافئة أو باردة أو محايدة"],c3b:["Your colour season","فصلك اللوني"],c3c:["Your palette to take shopping","باليتك تاخذينها معك للتسوق"],
 k2:["Every day","كل يوم"],
 s2:["Your everyday style","ستايلك اليومي"],
-l2:["Aura gets dressed with you, using the real pieces in your wardrobe.","أورا تختار معك لبسك من القطع الحقيقية في خزانتك."],
+l2:["Diva gets dressed with you, using the real pieces in your wardrobe.","ديفا تختار معك لبسك من القطع الحقيقية في خزانتك."],
 d1t:["Outfit check","تقييم الإطلالة"],
-d1p:["Tell Aura the occasion, take a photo of your outfit: you get a score, what works and what to change. Then Aura talks it over with you.","قولي لأورا وين رايحة، وصوّري لبسك: تحصلين على تقييم، وش الحلو فيه ووش تغيّرين. وبعدها أورا تتناقش معك."],
+d1p:["Tell Diva the occasion, take a photo of your outfit: you get a score, what works and what to change. Then Diva talks it over with you.","قولي لديفا وين رايحة، وصوّري لبسك: تحصلين على تقييم، وش الحلو فيه ووش تغيّرين. وبعدها ديفا تتناقش معك."],
 d2t:["What to wear today?","وش ألبس اليوم؟"],
-d2p:["Every morning, Aura picks an outfit from your clothes based on your city's weather and your plans (office, weekend…), avoiding what you've worn in the last few days.","كل صباح، أورا تختار لك إطلالة من ملابسك حسب طقس مدينتك وبرنامجك (دوام، ويكند…)، وتتجنب اللي لبستيه الأيام اللي طافت."],
+d2p:["Every morning, Diva picks an outfit from your clothes based on your city's weather and your plans (office, weekend…), avoiding what you've worn in the last few days.","كل صباح، ديفا تختار لك إطلالة من ملابسك حسب طقس مدينتك وبرنامجك (دوام، ويكند…)، وتتجنب اللي لبستيه الأيام اللي طافت."],
 d3t:["Digital wardrobe","خزانة رقمية"],
-d3p:["Add your clothes with a photo, with no limit. Aura sorts them by type and colour, and knows what you wear often or never.","أضيفي ملابسك بالصور بدون حد. أورا ترتبها حسب النوع واللون، وتعرف وش تلبسين كثير ووش ما تلبسينه أبداً."],
+d3p:["Add your clothes with a photo, with no limit. Diva sorts them by type and colour, and knows what you wear often or never.","أضيفي ملابسك بالصور بدون حد. ديفا ترتبها حسب النوع واللون، وتعرف وش تلبسين كثير ووش ما تلبسينه أبداً."],
 d4t:["Create an outfit & My week","سوّي إطلالة و«أسبوعي»"],
-d4p:["Aura creates looks with your pieces for every occasion. Save your favourite outfits and plan your week.","أورا تنسّق إطلالات من قطعك لكل مناسبة. احفظي إطلالاتك المفضلة ونظّمي أسبوعك."],
-k3:["Only on My Style","حصرياً في My Style"],
+d4p:["Diva creates looks with your pieces for every occasion. Save your favourite outfits and plan your week.","ديفا تنسّق إطلالات من قطعك لكل مناسبة. احفظي إطلالاتك المفضلة ونظّمي أسبوعك."],
+k3:["Only on Diva Divina","حصرياً في Diva Divina"],
 s3:["Your Style Twin","توأم الستايل"],
-l3:["Your Style Twin is a digital copy of your style: your silhouette, measurements, face, skin tone, tastes, budget, occasions and every piece in your wardrobe. That's what lets Aura advise you, not women in general.","توأم الستايل نسخة رقمية من ستايلك: قوامك، مقاساتك، وجهك، بشرتك، ذوقك، ميزانيتك، مناسباتك، وكل قطعة في خزانتك. وهذا اللي يخلّي أورا تنصحك أنتِ بالذات، مو أي وحدة."],
+l3:["Your Style Twin is a digital copy of your style: your silhouette, measurements, face, skin tone, tastes, budget, occasions and every piece in your wardrobe. That's what lets Diva advise you, not women in general.","توأم الستايل نسخة رقمية من ستايلك: قوامك، مقاساتك، وجهك، بشرتك، ذوقك، ميزانيتك، مناسباتك، وكل قطعة في خزانتك. وهذا اللي يخلّي ديفا تنصحك أنتِ بالذات، مو أي وحدة."],
 l3b:["The app shows you how complete your twin is and what's left to add.","التطبيق يوريك نسبة اكتمال توأمك ووش باقي تضيفين."],
 k4:["Buy better","تسوّقي أذكى"],
 s4:["Smart shopping","التسوق الذكي"],
 e1t:["Shop","المتجر"],
-e1p:["A selection of pieces sorted for you in three worlds: Luxury, Trendy and Budget. Aura shows you what suits your silhouette, colours and budget.","مختارات من القطع مرتبة لك في ثلاث عوالم: فاخر، ترند، وأسعار حلوة. أورا توريك اللي يناسب قوامك وألوانك وميزانيتك."],
+e1p:["A selection of pieces sorted for you in three worlds: Luxury, Trendy and Budget. Diva shows you what suits your silhouette, colours and budget.","مختارات من القطع مرتبة لك في ثلاث عوالم: فاخر، ترند، وأسعار حلوة. ديفا توريك اللي يناسب قوامك وألوانك وميزانيتك."],
 e2t:["Is it worth it?","تستاهل؟"],
-e2p:["Before you buy, show the piece to Aura. She tells you if it suits you, if you already own something similar, what to wear it with from your wardrobe and how much it will cost you per wear. Verdict: good buy, think about it, or not for now.","قبل لا تشترين، وري القطعة لأورا. تقول لك إذا تناسبك، وإذا عندك شي يشبهها، ووش تلبسين معها من خزانتك، وكم بتكلفك كل مرة تلبسينها. والحكم: شراء موفق، فكّري فيها، أو مو الحين."],
+e2p:["Before you buy, show the piece to Diva. She tells you if it suits you, if you already own something similar, what to wear it with from your wardrobe and how much it will cost you per wear. Verdict: good buy, think about it, or not for now.","قبل لا تشترين، وري القطعة لديفا. تقول لك إذا تناسبك، وإذا عندك شي يشبهها، ووش تلبسين معها من خزانتك، وكم بتكلفك كل مرة تلبسينها. والحكم: شراء موفق، فكّري فيها، أو مو الحين."],
 k5:["Made for you","مصمّم لك"],
 s5:["Abaya & Gulf occasions","العباية ومناسبات الخليج"],
 f1t:["Your abaya","عبايتك"],
 f1p:["The abaya cut that flatters your silhouette, the right length for your height, the fabric for the season, the colours from your palette, and how to wear your sheila for your face shape.","قصّة العباية اللي تبرز قوامك، الطول المناسب لطولك، القماش حسب الموسم، ألوان باليتك، وطريقة لبس الشيلة حسب شكل وجهك."],
 f2t:["Occasions","المناسبات"],
-f2p:["Wedding, henna night, Ramadan, Garangao, Eid, office, majlis, condolences, national day: the dress code for each occasion, what to wear, what to avoid, and Aura creates your outfit.","العرس، ليلة الحنّا، رمضان، القرنقعوه، العيد، الدوام، المجلس، العزاء، اليوم الوطني: الكود لكل مناسبة، وش تلبسين ووش تتجنبين، وأورا تنسّق لك إطلالتك."],
+f2p:["Wedding, henna night, Ramadan, Garangao, Eid, office, majlis, condolences, national day: the dress code for each occasion, what to wear, what to avoid, and Diva creates your outfit.","العرس، ليلة الحنّا، رمضان، القرنقعوه، العيد، الدوام، المجلس، العزاء، اليوم الوطني: الكود لكل مناسبة، وش تلبسين ووش تتجنبين، وديفا تنسّق لك إطلالتك."],
 k6:["Beauty & elegance","الجمال والأناقة"],
 s6:["Beauty","الجمال"],
 g1t:["Make-up in pictures","المكياج بالصور"],
@@ -395,9 +399,9 @@ g1p:["The make-up that flatters your face shape, for day and evening. Take a pho
 g2t:["Etiquette","الإتيكيت"],
 g2p:["The ways of an elegant woman: how to sit, walk and speak gracefully, with simple tips to apply right away.","حركات المرأة الأنيقة: كيف تجلسين وتمشين وتتكلمين برقي، بنصايح بسيطة تطبقينها على طول."],
 k7:["Bridal space","ركن العروس"],
-l7:["Your bridal style, guided by Aura. Built from your My Style profile, with no need to redo the tests.","ستايلك كعروس، بإرشاد أورا. من ملفك في My Style بدون ما تعيدين التحاليل."],
+l7:["Your bridal style, guided by Diva. Built from your Diva Divina profile, with no need to redo the tests.","ستايلك كعروس، بإرشاد ديفا. من ملفك في Diva Divina بدون ما تعيدين التحاليل."],
 z1t:["👰 Your dress","👰 فستانك"],
-z1p:["Aura suggests 3 explained dress directions, you explore the silhouettes, or show her a photo of a dress for her opinion.","أورا تقترح عليك ٣ اتجاهات للفستان مع الشرح، أو تستكشفين القصّات بنفسك، أو توريها صورة فستان وتعطيك رأيها."],
+z1p:["Diva suggests 3 explained dress directions, you explore the silhouettes, or show her a photo of a dress for her opinion.","ديفا تقترح عليك ٣ اتجاهات للفستان مع الشرح، أو تستكشفين القصّات بنفسك، أو توريها صورة فستان وتعطيك رأيها."],
 z2t:["💎 Your complete look","💎 إطلالتك الكاملة"],
 z2p:["Jewellery, veil, shoes, hairstyle, make-up and bouquet matched to your dress, with several looks to compare.","المجوهرات، الطرحة، الحذاء، تسريحة الشعر، المكياج والمسكة متناسقة مع فستانك، مع أكثر من إطلالة للمقارنة."],
 z3t:["🎨 Colours & inspiration","🎨 الألوان والإلهام"],
@@ -414,25 +418,25 @@ p1:["Your results and wardrobe are saved on your phone.","نتائجك وخزا�
 p2:["Photos are optional: your silhouette can be done with your measurements, and your face can be hidden on the body photo.","الصور اختيارية: تحليل القوام ممكن بالمقاسات، وتقدرين تخفين وجهك في صورة الجسم."],
 p3:["One button deletes all your data, at any time.","زر واحد يمسح كل بياناتك في أي وقت."],
 ct:["Be among the first","كوني من الأوائل"],
-cl:["Sign up to be notified as soon as My Style arrives on Google Play.","سجّلي عشان نخبرك أول ما ينزل My Style على Google Play."],
+cl:["Sign up to be notified as soon as Diva Divina arrives on Google Play.","سجّلي عشان نخبرك أول ما ينزل Diva Divina على Google Play."],
 b2:["Notify me","أبي أعرف أول وحدة"],
 pt:["Privacy policy","سياسة الخصوصية"],
-pd:["Last updated: 3 November 2026. This policy applies to the My Style app and this website.","آخر تحديث: ٣ نوفمبر ٢٠٢٦. تنطبق هذه السياسة على تطبيق My Style وهذا الموقع."],
+pd:["Last updated: 3 November 2026. This policy applies to the Diva Divina app and this website.","آخر تحديث: ٣ نوفمبر ٢٠٢٦. تنطبق هذه السياسة على تطبيق Diva Divina وهذا الموقع."],
 q1:["Data collected","البيانات التي نجمعها"],
 q1a:["Your first name and email address (website waiting list or app account).","اسمك الأول وبريدك الإلكتروني (قائمة انتظار الموقع أو حساب التطبيق)."],
 q1b:["The information you choose to add: height, measurements, weight, style preferences, budget, occasions.","المعلومات التي تختارين إضافتها: الطول، المقاسات، الوزن، تفضيلات الستايل، الميزانية، المناسبات."],
 q1c:["The photos you send for an analysis (face, silhouette, outfit, garment, dress).","الصور التي ترسلينها للتحليل (الوجه، القوام، الإطلالة، القطعة، الفستان)."],
-q1d:["Your voice and messages, only during a conversation with Aura.","صوتك ورسائلك، فقط أثناء المحادثة مع أورا."],
+q1d:["Your voice and messages, only during a conversation with Diva.","صوتك ورسائلك، فقط أثناء المحادثة مع ديفا."],
 q2:["Use","الاستخدام"],
-q2p:["This data is only used to give you your personalised analyses and advice. Photos are analysed by Google Gemini and Aura's voice is produced by ElevenLabs, through a secure server (Cloudflare). Face measurement happens on your phone. Weather comes from Open-Meteo, based on your approximate city. We never sell your data.","تُستخدم هذه البيانات فقط لتقديم تحليلاتك ونصائحك الشخصية. تُحلَّل الصور عبر Google Gemini ويُنتَج صوت أورا عبر ElevenLabs، من خلال خادم آمن (Cloudflare). قياس الوجه يتم على جوالك. معلومات الطقس من Open-Meteo حسب مدينتك التقريبية. لا نبيع بياناتك أبداً."],
+q2p:["This data is only used to give you your personalised analyses and advice. Photos are analysed by Google Gemini and Diva's voice is produced by ElevenLabs, through a secure server (Cloudflare). Face measurement happens on your phone. Weather comes from Open-Meteo, based on your approximate city. We never sell your data.","تُستخدم هذه البيانات فقط لتقديم تحليلاتك ونصائحك الشخصية. تُحلَّل الصور عبر Google Gemini ويُنتَج صوت ديفا عبر ElevenLabs، من خلال خادم آمن (Cloudflare). قياس الوجه يتم على جوالك. معلومات الطقس من Open-Meteo حسب مدينتك التقريبية. لا نبيع بياناتك أبداً."],
 q3:["Check by a stylist","مراجعة الستايلست"],
 q3p:["If you send a request to the stylist, your question, results and any photo are kept for a maximum of 60 days, then deleted.","إذا أرسلتِ طلباً للستايلست، يُحفظ سؤالك ونتائجك وصورتك إن وُجدت لمدة ٦٠ يوماً كحد أقصى، ثم تُحذف."],
 q4:["Links to shops","روابط المتاجر"],
-q4p:["The Shop contains links to partner retail sites. When you click, you leave My Style and that site's policy applies. My Style may receive a commission on some purchases, at no cost to you.","يحتوي المتجر على روابط لمواقع شركاء. عند الضغط تغادرين My Style وتنطبق سياسة ذلك الموقع. قد يحصل My Style على عمولة من بعض المشتريات دون أي تكلفة عليك."],
+q4p:["The Shop contains links to partner retail sites. When you click, you leave Diva Divina and that site's policy applies. Diva Divina may receive a commission on some purchases, at no cost to you.","يحتوي المتجر على روابط لمواقع شركاء. عند الضغط تغادرين Diva Divina وتنطبق سياسة ذلك الموقع. قد يحصل Diva Divina على عمولة من بعض المشتريات دون أي تكلفة عليك."],
 q5:["Retention and deletion","الاحتفاظ والحذف"],
 q5p:["You can erase everything from your Profile, or request access to or deletion of your data by writing to the address below. We handle requests within 30 days.","يمكنك مسح كل شيء من ملفك الشخصي، أو طلب الاطلاع على بياناتك أو حذفها بالكتابة إلى العنوان أدناه. نعالج الطلب خلال ٣٠ يوماً."],
 q6:["Age","العمر"],
-q6p:["My Style is intended for people aged 18 and over.","تطبيق My Style موجّه لمن هم في عمر ١٨ سنة فما فوق."],
+q6p:["Diva Divina is intended for people aged 18 and over.","تطبيق Diva Divina موجّه لمن هم في عمر ١٨ سنة فما فوق."],
 q7:["Contact","التواصل"],
 fc:["Privacy","الخصوصية"],
 fp:["First name","الاسم"],fe:["Email","البريد الإلكتروني"],fy:["Country","البلد"],
