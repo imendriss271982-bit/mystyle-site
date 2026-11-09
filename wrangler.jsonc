@@ -1,0 +1,12 @@
+{
+  "name": "mystyle-site",
+  "compatibility_date": "2026-10-01",
+  // Site vitrine statique de Diva Divina.
+  "assets": { "directory": "." },
+  // Adresses du site : l'ancienne reste active, le domaine principal et www en plus.
+  "routes": [
+    { "pattern": "mystyle.divadivina.app", "custom_domain": true },
+    { "pattern": "divadivina.app", "custom_domain": true },
+    { "pattern": "www.divadivina.app", "custom_domain": true }
+  ]
+}
