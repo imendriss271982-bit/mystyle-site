@@ -155,10 +155,43 @@ html[lang=ar] .kicker{font-size:13px;letter-spacing:0}
  box-shadow:0 1px 0 rgba(255,255,255,.45) inset,0 -2px 0 rgba(0,0,0,.12) inset,0 6px 16px -4px rgba(60,42,18,.35)!important;font-family:Jost,"IBM Plex Sans Arabic",sans-serif;font-weight:500;letter-spacing:.04em}
 .btn.lite{background:rgba(255,253,249,.9)!important;color:var(--gold-dark)!important;border:1px solid rgba(154,118,56,.35)!important;box-shadow:0 2px 10px rgba(60,42,18,.08)!important}
 .card{background:var(--card);border:1px solid rgba(154,118,56,.20);box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 2px 4px rgba(60,42,18,.05),0 8px 20px -6px rgba(60,42,18,.12)}
+/* Onglet latéral « Télécharger l'app » */
+.dl-tab{position:fixed;top:50%;right:0;transform:translateY(-50%);z-index:60;display:flex;flex-direction:column;align-items:center;gap:10px;
+ padding:16px 10px;border:1px solid #6A4F24;border-right:none;border-radius:16px 0 0 16px;cursor:pointer;color:#fff;font-family:Jost,"IBM Plex Sans Arabic",sans-serif;
+ background:linear-gradient(180deg,#D2B072 0%,#B08A4A 34%,#94713A 66%,#7C5D2D 100%);box-shadow:0 1px 0 rgba(255,255,255,.45) inset,-4px 6px 18px -4px rgba(60,42,18,.4)}
+.dl-tab img{width:30px;height:30px;border-radius:8px;background:#fff;padding:2px}
+.dl-tab span{writing-mode:vertical-rl;transform:rotate(180deg);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+html[dir=rtl] .dl-tab{right:auto;left:0;border-right:1px solid #6A4F24;border-left:none;border-radius:0 16px 16px 0}
+html[lang=ar] .dl-tab span{writing-mode:vertical-rl;transform:none;text-transform:none;letter-spacing:0;font-size:14px}
+.dl-tab:hover{filter:brightness(1.06)}
+.dl-pop{position:fixed;inset:0;z-index:70;display:none;align-items:center;justify-content:center;background:rgba(35,28,23,.45);padding:20px}
+.dl-pop.on{display:flex}
+.dl-box{position:relative;max-width:360px;width:100%;background:#FFFDF9;border:1px solid rgba(154,118,56,.3);border-radius:22px;padding:28px 24px 22px;text-align:center;box-shadow:0 20px 50px -10px rgba(60,42,18,.4)}
+.dl-box img{width:76px;height:76px;border-radius:18px;box-shadow:0 4px 14px rgba(60,42,18,.18)}
+.dl-box h3{margin:12px 0 4px;font-family:var(--fh);font-size:24px;color:var(--ink)}
+.dl-box p{margin:6px 0;color:var(--soft);font-size:14px;line-height:1.5}
+.dl-box .btn{display:block;margin:16px 0 10px}
+.dl-steps{background:rgba(176,138,74,.08);border-radius:14px;padding:12px 14px;text-align:start;font-size:13.5px;color:var(--ink);line-height:1.6}
+.dl-soon{display:inline-block;margin-top:12px;font-size:12px;color:var(--gold-dark);border:1px solid rgba(154,118,56,.35);border-radius:20px;padding:5px 12px}
+.dl-x{position:absolute;top:10px;inset-inline-end:14px;background:none;border:none;font-size:24px;color:var(--soft);cursor:pointer}
+@media(max-width:600px){.dl-tab{padding:12px 7px;gap:8px}.dl-tab img{width:24px;height:24px}.dl-tab span{font-size:11px}}
 </style>
 </head>
 <body>
 <div class="silk" aria-hidden="true"></div>
+
+<button class="dl-tab" id="dlTab" type="button" aria-haspopup="dialog"><img src="apple-touch-icon.png" alt="" aria-hidden="true"><span data-t="dlt">Télécharger l'app</span></button>
+<div class="dl-pop" id="dlPop" role="dialog" aria-modal="true" aria-labelledby="dlTitle">
+  <div class="dl-box">
+    <button class="dl-x" id="dlX" type="button" aria-label="Fermer">×</button>
+    <img src="apple-touch-icon.png" alt="Diva Divina">
+    <h3 id="dlTitle">Diva Divina</h3>
+    <p data-t="dlp">Ta styliste personnelle, sur ton téléphone.</p>
+    <a class="btn" id="dlGo" data-t="dlb" href="https://imendriss271982-bit.github.io/mon-style/" target="_blank" rel="noopener">Ouvrir l'app</a>
+    <div class="dl-steps" id="dlSteps"></div>
+    <span class="dl-soon" data-t="dls">Bientôt sur Google Play</span>
+  </div>
+</div>
 
 <div class="wrap">
   <header>
@@ -463,7 +496,11 @@ fc:["Privacy","الخصوصية"],
 fp:["First name","الاسم"],fe:["Email","البريد الإلكتروني"],fy:["Country","البلد"],
 y1:["Qatar","قطر"],y2:["United Arab Emirates","الإمارات"],y3:["Saudi Arabia","السعودية"],y4:["Kuwait","الكويت"],y5:["Bahrain","البحرين"],y6:["Oman","عُمان"],y7:["Other country","بلد آخر"],
 fn:["Just one email at launch. You can unsubscribe anytime.","إيميل واحد فقط عند الإطلاق، وتقدرين تلغين متى ما بغيتِ."],
-fk:["Contact","تواصل معنا"]
+fk:["Contact","تواصل معنا"],
+dlt:["Download the app","حمّلي التطبيق"],
+dlp:["Your personal stylist, on your phone.","ستايلستك الشخصية، في جوالك."],
+dlb:["Open the app","افتحي التطبيق"],
+dls:["Coming soon on Google Play","قريباً على Google Play"]
 };
 var FR={};
 document.querySelectorAll("[data-t]").forEach(function(e){FR[e.dataset.t]=e.innerHTML});
@@ -488,6 +525,19 @@ document.getElementById("wl").addEventListener("submit",function(ev){
 });
 function ouvrePol(){if(location.hash=="#confidentialite"){var d=document.getElementById("confidentialite");d.open=true;d.scrollIntoView()}}
 addEventListener("hashchange",ouvrePol);ouvrePol();
+// Onglet « Télécharger l'app » : ouvre l'app et explique comment l'ajouter à l'écran d'accueil
+var DLS={ios:["Sur iPhone : ouvre l'app dans Safari, touche <b>Partager</b> ⬆️ puis <b>« Sur l'écran d'accueil »</b>.","On iPhone: open the app in Safari, tap <b>Share</b> ⬆️ then <b>“Add to Home Screen”</b>.","على الآيفون: افتحي التطبيق في Safari، اضغطي <b>مشاركة</b> ⬆️ ثم <b>«إضافة إلى الشاشة الرئيسية»</b>."],
+ and:["Sur Android : ouvre l'app dans Chrome, touche le menu <b>⋮</b> puis <b>« Installer l'application »</b>.","On Android: open the app in Chrome, tap the <b>⋮</b> menu then <b>“Install app”</b>.","على الأندرويد: افتحي التطبيق في Chrome، اضغطي القائمة <b>⋮</b> ثم <b>«تثبيت التطبيق»</b>."],
+ pc:["Sur ton téléphone : ouvre l'app puis ajoute-la à ton écran d'accueil pour l'avoir comme une vraie application.","On your phone: open the app, then add it to your home screen to use it like a real app.","من جوالك: افتحي التطبيق وأضيفيه للشاشة الرئيسية عشان يصير مثل تطبيق حقيقي."]};
+function dlOpen(){var u=navigator.userAgent,k=/iPhone|iPad|iPod/i.test(u)?"ios":/Android/i.test(u)?"and":"pc";
+ document.getElementById("dlSteps").innerHTML=DLS[k][LANG=="en"?1:LANG=="ar"?2:0];
+ document.getElementById("dlPop").classList.add("on");document.getElementById("dlX").focus()}
+function dlClose(){document.getElementById("dlPop").classList.remove("on")}
+document.getElementById("dlTab").addEventListener("click",dlOpen);
+document.getElementById("dlX").addEventListener("click",dlClose);
+document.getElementById("dlPop").addEventListener("click",function(e){if(e.target.id=="dlPop")dlClose()});
+addEventListener("keydown",function(e){if(e.key=="Escape")dlClose()});
+
 document.querySelectorAll(".langs button").forEach(function(b){b.onclick=function(){setLang(b.dataset.l)}});
 var q=new URLSearchParams(location.search).get("lang"),s=null;
 try{s=localStorage.getItem("ms_site_lang")}catch(e){}
