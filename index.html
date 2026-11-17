@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Diva Divina — Ta personal stylist IA | Diva</title>
-<meta name="description" content="Diva Divina : analyse de ton visage, de ta silhouette et de tes couleurs, garde-robe digitale, outfit check noté, le Majlis pour partager tes tenues avec tes amies, abaya et occasions du Golfe, espace mariée Zifafi Wedding, et Diva, ta personal stylist IA qui te parle en français, anglais et arabe.">
+<meta name="description" content="Diva Divina : analyse de ton visage, de ta silhouette et de tes couleurs, garde-robe digitale, outfit check noté, le Majlis pour partager tes tenues avec tes amies, abaya et occasions du Golfe, espace mariée, et Diva, ta personal stylist IA qui te parle en français, anglais et arabe.">
 <meta property="og:title" content="Diva Divina — Ta personal stylist IA">
 <meta property="og:description" content="Diva analyse ton visage, ta silhouette et tes couleurs, puis t'habille chaque jour avec ta propre garde-robe.">
 <meta property="og:image" content="https://www.divadivina.app/logo-dd-1024.png">
@@ -139,8 +139,8 @@ footer{text-align:center;padding:24px 0 40px;font-size:14px;color:var(--soft)}
 footer a,.policy a{color:var(--gold-dark)}
 
 /* Identité de l'app Diva Divina (v205 « Maison ») : didone Bodoni Moda façon couture, logo DIVA / DIVINA noir en capitales,
-   ivoire · champagne · bordeaux en accent fin, boutons dorés bombés. */
-:root{--cream:#FBF8F2;--ink:#231C17;--soft:#5D534B;--gold:#B08A4A;--gold-dark:#7A5B26;--gold-deep:#6A4F24;--wine:#6B1E2E;
+   ivoire · nacre · champagne · noir · or (charte v2, sans bordeaux), boutons dorés bombés. */
+:root{--cream:#FBF8F2;--ink:#231C17;--soft:#5D534B;--gold:#B08A4A;--gold-dark:#7A5B26;--gold-deep:#6A4F24;
  --card:linear-gradient(180deg,#FFFDF9 0%,#FFFFFF 38%,#FBF8F2 100%);--fh:"Bodoni Moda","Noto Naskh Arabic",Georgia,serif}
 body{font-family:Jost,"IBM Plex Sans Arabic",system-ui,sans-serif;color:var(--ink)}
 html[lang=ar] body{font-family:"IBM Plex Sans Arabic",Jost,sans-serif}
@@ -150,7 +150,7 @@ html[lang=ar] h1,html[lang=ar] h2,html[lang=ar] h3,html[lang=ar] h4,html[lang=ar
 .logo .my,.logo .st{background:none!important;-webkit-text-fill-color:currentColor!important;color:#1C1714!important;filter:none!important;text-shadow:none!important;padding:0!important;font-family:"Bodoni Moda",Georgia,serif!important;font-weight:500;text-transform:uppercase;line-height:1}
 .logo .my{font-size:clamp(26px,3.4vw,34px)!important;letter-spacing:.22em!important;margin:0 -.22em 0 0!important}
 .logo .st{font-size:clamp(9.5px,1.1vw,11px)!important;letter-spacing:.64em!important;margin:7px -.64em 0 0!important}
-.kicker{font-family:Jost,sans-serif;font-size:11px;font-weight:500;letter-spacing:.18em;color:var(--wine)}
+.kicker{font-family:Jost,sans-serif;font-size:11px;font-weight:500;letter-spacing:.18em;color:var(--gold-dark)}
 html[lang=ar] .kicker{font-size:13px;letter-spacing:0}
 .btn{background:linear-gradient(180deg,#D2B072 0%,#B08A4A 34%,#94713A 66%,#7C5D2D 100%)!important;color:#fff!important;border:1px solid #6A4F24!important;
  box-shadow:0 1px 0 rgba(255,255,255,.45) inset,0 -2px 0 rgba(0,0,0,.12) inset,0 6px 16px -4px rgba(60,42,18,.35)!important;font-family:Jost,"IBM Plex Sans Arabic",sans-serif;font-weight:500;letter-spacing:.04em}
@@ -198,6 +198,12 @@ html[lang=ar] .dl-tab span{writing-mode:vertical-rl;transform:none;text-transfor
 .ptn small{font-size:12px;color:#6E6E6E}
 .ptn-more{text-align:center;margin-top:16px}
 .ptn-note{text-align:center;font-size:12.5px;color:var(--soft);margin-top:10px}
+.ptn-maison{margin-top:34px}
+.ptn-mq{display:flex;align-items:center;gap:16px;background:#fff;border:1px solid #EADFC9;border-radius:20px;padding:14px 18px;margin:0 auto 14px;max-width:640px;box-shadow:0 4px 14px rgba(90,64,30,.07)}
+.ptn-mq img{height:46px;width:auto;max-width:130px;object-fit:contain;flex:none}
+.ptn-mq div{display:flex;flex-direction:column;gap:3px;min-width:0;text-align:start}
+.ptn-mq b{font-size:18px;letter-spacing:.05em;color:#1C1714}
+.ptn-mq small{font-size:13.5px;color:var(--soft);line-height:1.4}
 
 /* Charte graphique v1 (charte.css) : le site suit exactement la même charte que l'app */
 :root{--cream:var(--dd-ivoire);--ink:var(--dd-noir);--soft:var(--dd-taupe);--gold:var(--dd-or);--gold-dark:var(--dd-or-texte);
@@ -235,7 +241,7 @@ body{font-family:var(--dd-texte)}
   <section class="hero">
     <div>
       <h1 data-t="h1">Ta personal stylist IA, toujours avec toi</h1>
-      <p data-t="hp">Diva analyse ton visage, ta silhouette et tes couleurs, puis t'aide chaque jour à t'habiller avec ta propre garde-robe. Elle te parle à voix haute, t'appelle par ton prénom et te conseille comme une vraie styliste.</p>
+      <p data-t="hp">Diva analyse ton visage, ta silhouette et tes couleurs, puis t'aide chaque jour à t'habiller avec ta propre garde-robe. Elle t'appelle par ton prénom, se souvient de tes occasions et te conseille comme une vraie styliste.</p>
       <div class="acts"><a class="btn" data-t="ba" href="https://imendriss271982-bit.github.io/mon-style/">Faire mon analyse gratuite</a>
       <a class="btn lite" data-t="b1" href="#inscription">Être prévenue du lancement</a></div>
       <div class="small" data-t="hs">Gratuite pendant la phase de test · S'ouvre dans ton navigateur, sans téléchargement · Bientôt sur Google Play</div>
@@ -256,7 +262,7 @@ body{font-family:var(--dd-texte)}
         <span class="kicker">My Stylist</span>
         <h2 data-t="ah">Rencontre Diva</h2>
         <p class="quote" data-t="aq">« Salut, je suis ta personal stylist. Commençons notre belle aventure de la beauté. »</p>
-        <p data-t="ap">Appelle Diva comme une amie styliste : elle t'écoute, regarde la photo que tu lui montres et te répond à voix haute, en quelques phrases claires. Elle connaît tes analyses, ta garde-robe et tes goûts, et elle parle français, anglais et arabe du Golfe. Tu peux couper sa voix à tout moment et lui écrire.</p>
+        <p data-t="ap">Écris à Diva comme à une amie styliste : elle lit ta question, regarde la photo que tu lui montres et te répond en quelques phrases claires. Tu peux aussi l'appeler pour lui parler de vive voix. Elle connaît tes analyses, ta garde-robe et tes goûts, se souvient de tes occasions, et parle français, anglais et arabe du Golfe.</p>
       </div>
     </div>
   </section>
@@ -322,15 +328,13 @@ body{font-family:var(--dd-texte)}
     <div class="grid">
       <div class="card"><div class="ic">🛍️</div><h3 data-t="e1t">Boutique</h3><p data-t="e1p">Une sélection de pièces classées pour toi, en trois univers : Luxe, Tendance et Petits prix. Diva te montre ce qui correspond à ta silhouette, tes couleurs et ton budget.</p></div>
       <div class="card"><div class="ic">💡</div><h3 data-t="e2t">Ça vaut le coup ?</h3><p data-t="e2p">Avant d'acheter, montre la pièce à Diva. Elle te dit si elle te va, si tu as déjà quelque chose de pareil, avec quoi la porter dans ta garde-robe et combien elle te coûtera par port. Verdict : bon achat, à réfléchir ou pas pour l'instant.</p></div>
-      <div class="card"><div class="ic">👑</div><h3 data-t="e3t">Robes de créatrice</h3><p data-t="e3p">Une collection de robes, kaftans et abayas d'une maison de couture de Dubaï, à filtrer (avec manches, kaftans et abaya, promos). Touche une robe pour l'ouvrir directement chez le créateur.</p><p style="margin-top:10px"><a href="#robes" style="color:var(--gold-dark);font-weight:500" data-t="e3l">Voir les robes ↓</a></p></div>
+      <div class="card"><div class="ic">👑</div><h3 data-t="e3t">Maisons partenaires</h3><p data-t="e3p">BARUNI (Dubaï) pour les robes, kaftans et abayas, The Shirt Company (Londres) pour les chemises et robes-chemises, ELVORIQUE pour les bijoux en diamants de laboratoire. Touche une pièce pour l'ouvrir directement chez la maison.</p><p style="margin-top:10px"><a href="#robes" style="color:var(--gold-dark);font-weight:500" data-t="e3l">Voir les maisons ↓</a></p></div>
     </div>
     <div class="ptn-wrap" id="robes">
-      <h2 data-t="rt">Robes de créatrice</h2>
-      <p class="ptn-sub" data-t="rs">Maison de couture de Dubaï · livraison dans tout le Golfe</p>
-      <div class="fchips" id="ptnF"></div>
-      <div class="ptn-g" id="ptnG"></div>
-      <div class="ptn-more"><button class="btn lite" id="ptnPlus" type="button" data-t="rp">Voir plus de robes</button></div>
-      <p class="ptn-note" data-t="rn">Prix en dollars américains, tels qu'affichés par la maison. Diva Divina peut recevoir une commission sur les achats, sans coût pour toi.</p>
+      <h2 data-t="rt">Nos maisons partenaires</h2>
+      <p class="ptn-sub" data-t="rs">Robes, chemises et bijoux choisis pour toi. Touche une pièce pour l'ouvrir directement chez la maison.</p>
+      <div id="ptnMaisons"></div>
+      <p class="ptn-note" data-t="rn">Diva Divina peut recevoir une commission sur les achats, sans coût pour toi.</p>
     </div>
   </section>
 
@@ -358,8 +362,8 @@ body{font-family:var(--dd-texte)}
   <section>
     <div class="card zifafi">
       <span class="kicker" data-t="k7">Espace mariée</span>
-      <h2>Zifafi Wedding</h2>
-      <p class="lead" data-t="l7">Your bridal style, guided by Diva. Ton style de mariée, à partir de ton profil Diva Divina, sans refaire les tests.</p>
+      <h2 data-t="zt">Mariage</h2>
+      <p class="lead" data-t="l7">Ton style de mariée, guidé par Diva, à partir de ton profil Diva Divina, sans refaire les tests.</p>
       <div class="grid">
         <div><h3 data-t="z1t">👰 Ta robe</h3><p data-t="z1p">Diva te propose 3 directions de robes expliquées, tu explores les silhouettes, ou tu lui montres la photo d'une robe pour son avis.</p></div>
         <div><h3 data-t="z2t">💎 Ton look complet</h3><p data-t="z2p">Bijoux, voile, chaussures, coiffure, maquillage et bouquet assortis à ta robe, avec plusieurs looks à comparer.</p></div>
@@ -449,7 +453,7 @@ function msg(k){return MSG[k][LANG=="en"?1:LANG=="ar"?2:0]}
 // Traductions [anglais, arabe] ; le français est écrit directement dans la page
 var T={
 h1:["Your AI personal stylist, always with you","مستشارة أناقتك الشخصية بالذكاء الاصطناعي، معك دائماً"],
-hp:["Diva analyses your face, your silhouette and your colours, then helps you get dressed every day with your own wardrobe. She talks to you out loud, calls you by your first name and advises you like a real stylist.","تحلّل «ديفا» شكل وجهك وقوامك وألوانك، ثم تساعدك كل يوم على اختيار إطلالتك من خزانتك أنتِ. تكلّمك بصوتها، وتناديك باسمك، وتنصحك مثل ستايلست حقيقية."],
+hp:["Diva analyses your face, your silhouette and your colours, then helps you get dressed every day with your own wardrobe. She calls you by your first name, remembers your occasions and advises you like a real stylist.","تحلّل «ديفا» شكل وجهك وقوامك وألوانك، ثم تساعدك كل يوم على اختيار إطلالتك من خزانتك أنتِ. تناديك باسمك، وتتذكّر مناسباتك، وتنصحك مثل ستايلست حقيقية."],
 ba:["Get my free analysis","سوّي تحليلي المجاني"],
 b1:["Get notified at launch","أبي أعرف وقت الإطلاق"],
 bc:["Start my analysis","ابدئي تحليلي"],
@@ -459,7 +463,7 @@ bg2:["For the whole Gulf","لكل دول الخليج"],
 bg3:["Photos optional","الصور اختيارية"],
 ah:["Meet Diva","تعرّفي على ديفا"],
 aq:["“Hi, I'm your personal stylist. Let's begin our beautiful beauty journey.”","«هلا، أنا ستايلست حقّك الشخصية. خلّينا نبدأ رحلة الجمال الحلوة.»"],
-ap:["Call Diva like a stylist friend: she listens, looks at the photo you show her and answers out loud, in a few clear sentences. She knows your analyses, your wardrobe and your tastes, and she speaks French, English and Gulf Arabic. You can mute her voice at any time and type instead.","اتصلي بديفا كأنها صديقتك الستايلست: تسمعك، وتشوف الصورة اللي توريها لها، وترد عليك بصوتها بجمل قصيرة وواضحة. تعرف نتائج تحليلك وخزانتك وذوقك، وتتكلم الفرنسية والإنجليزية واللهجة الخليجية. تقدرين توقفين صوتها في أي وقت وتكتبين لها."],
+ap:["Write to Diva like a stylist friend: she reads your question, looks at the photo you show her and answers in a few clear sentences. You can also call her to talk out loud. She knows your analyses, your wardrobe and your tastes, remembers your occasions, and speaks French, English and Gulf Arabic.","اكتبي لديفا كأنها صديقتك الستايلست: تقرا سؤالك، وتشوف الصورة اللي توريها لها، وترد عليك بجمل قصيرة وواضحة. وتقدرين بعد تتصلين فيها وتكلمينها بصوتك. تعرف نتائج تحليلك وخزانتك وذوقك، وتتذكّر مناسباتك، وتتكلم الفرنسية والإنجليزية واللهجة الخليجية."],
 k1:["Only once","مرة واحدة فقط"],
 s1:["Your style analysis in 3 steps","تحليل ستايلك في ٣ خطوات"],
 l1:["You do it once and can redo it whenever you like. The whole app then uses it to advise you.","تسوينه مرة وحدة وتقدرين تعيدينه متى ما بغيتِ، والتطبيق كله يعتمد عليه في نصايحك."],
@@ -506,6 +510,7 @@ g1p:["The make-up that flatters your face shape, for day and evening. Take a pho
 g2t:["Etiquette","الإتيكيت"],
 g2p:["The ways of an elegant woman: how to sit, walk and speak gracefully, with simple tips to apply right away.","حركات المرأة الأنيقة: كيف تجلسين وتمشين وتتكلمين برقي، بنصايح بسيطة تطبقينها على طول."],
 k7:["Bridal space","ركن العروس"],
+zt:["Wedding","زفافي"],
 l7:["Your bridal style, guided by Diva. Built from your Diva Divina profile, with no need to redo the tests.","ستايلك كعروس، بإرشاد ديفا. من ملفك في Diva Divina بدون ما تعيدين التحاليل."],
 z1t:["👰 Your dress","👰 فستانك"],
 z1p:["Diva suggests 3 explained dress directions, you explore the silhouettes, or show her a photo of a dress for her opinion.","ديفا تقترح عليك ٣ اتجاهات للفستان مع الشرح، أو تستكشفين القصّات بنفسك، أو توريها صورة فستان وتعطيك رأيها."],
@@ -539,16 +544,15 @@ m2t:["Share your outfits","شاركي إطلالاتك"],
 m2p:["Send a photo of your outfit, your outfit check or a look created from your wardrobe, and ask your friends what they think.","أرسلي صورة إطلالتك، أو تقييم إطلالتك، أو لوك مسوّى من خزانتك، واسألي صديقاتك عن رأيهم."],
 m3t:["Diva when you call her","ديفا لما تناديها"],
 m3p:["Write “Diva” in the conversation and she gives her advice, in writing. The rest of the time, she leaves you to it.","اكتبي «ديفا» في المحادثة وتعطيك نصيحتها كتابةً. وباقي الوقت تخلّيكم على راحتكم."],
-e3t:["Designer dresses","فساتين مصمّمين"],
-e3p:["A collection of dresses, kaftans and abayas from a Dubai couture house, with filters (with sleeves, kaftans and abaya, sale). Tap a dress to open it directly at the designer's.","مجموعة فساتين وقفاطين وعبايات من دار أزياء في دبي، مع فلاتر (بأكمام، قفاطين وعبايات، تخفيضات). اضغطي على الفستان ويفتح لك مباشرة عند المصمّم."],
+e3t:["Partner houses","دور الأزياء الشريكة"],
+e3p:["BARUNI (Dubai) for dresses, kaftans and abayas, The Shirt Company (London) for shirts and shirt dresses, ELVORIQUE for lab-grown diamond jewellery. Tap a piece to open it directly at the house.","BARUNI (دبي) للفساتين والقفاطين والعبايات، وThe Shirt Company (لندن) للقمصان وفساتين القميص، وELVORIQUE لمجوهرات الألماس المصنّع في المختبر. اضغطي على أي قطعة وتفتح لك مباشرة عند الدار."],
 h3t:["Private session with the stylist","جلسة خاصة مع الستايلست"],
 h3p:["Book one hour with Diva Divina's stylist and image consultant: online or in Doha, for 300 QAR. You choose the date and your goal in the app, and the stylist confirms by email.","احجزي ساعة مع ستايلست ومستشارة الصورة في Diva Divina: أونلاين أو في الدوحة، بـ٣٠٠ ريال قطري. تختارين الموعد وهدفك من التطبيق، والستايلست تأكد لك بالإيميل."],
 q1e:["The messages and photos you send in the Majlis, visible only to the friends you invited.","الرسائل والصور اللي ترسلينها في المجلس، تشوفها بس الصديقات اللي دعيتيهم."],
-e3l:["See the dresses ↓","شوفي الفساتين ↓"],
-rt:["Designer dresses","فساتين مصمّمين"],
-rs:["Dubai couture house · delivery across the Gulf","دار أزياء في دبي · توصيل لكل دول الخليج"],
-rp:["See more dresses","شوفي فساتين أكثر"],
-rn:["Prices in US dollars, as shown by the house. Diva Divina may receive a commission on purchases, at no cost to you.","الأسعار بالدولار الأمريكي كما تعرضها الدار. قد تحصل Diva Divina على عمولة من المشتريات، بدون أي تكلفة عليك."],
+e3l:["See the houses ↓","شوفي الدور ↓"],
+rt:["Our partner houses","دور الأزياء الشريكة"],
+rs:["Dresses, shirts and jewellery chosen for you. Tap a piece to open it directly at the house.","فساتين وقمصان ومجوهرات مختارة لك. اضغطي على أي قطعة وتفتح لك مباشرة عند الدار."],
+rn:["Diva Divina may receive a commission on purchases, at no cost to you.","Diva Divina ممكن تحصل على عمولة على المشتريات، بدون أي تكلفة عليك."],
 q1a:["Your first name and email address (website waiting list or app account).","اسمك الأول وبريدك الإلكتروني (قائمة انتظار الموقع أو حساب التطبيق)."],
 q1b:["The information you choose to add: height, measurements, weight, style preferences, budget, occasions.","المعلومات التي تختارين إضافتها: الطول، المقاسات، الوزن، تفضيلات الستايل، الميزانية، المناسبات."],
 q1c:["The photos you send for an analysis (face, silhouette, outfit, garment, dress).","الصور التي ترسلينها للتحليل (الوجه، القوام، الإطلالة، القطعة، الفستان)."],
@@ -618,28 +622,57 @@ var n=(navigator.language||"fr").slice(0,2);
 setLang(["fr","en","ar"].indexOf(q)>=0?q:(s||(n=="ar"?"ar":n=="en"?"en":"fr")));
 </script>
 <script src="partenaires-data.js"></script>
+<script src="shirtco-data.js"></script>
+<script src="elvorique-data.js"></script>
 <script>
+// Maisons partenaires (affiliation Awin, éditeur 3154850) : même contenu que la Boutique de l'app.
 (function(){
-var AFF="3154850",IMG="https://cdn.shopify.com/s/files/1/0436/0113/3728/files/",FAV="layan-dress-v-neck-maxi-wedding-guest-dress";
-if(typeof BARUNI=="undefined")return;
+var AFF="3154850";
+function aw(mid,u){return"https://www.awin1.com/cread.php?awinmid="+mid+"&awinaffid="+AFF+"&ued="+encodeURIComponent(u)}
 function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
-var R=BARUNI.map(function(r){return{id:r[0],nom:r[1],type:r[2],prix:r[3],avant:r[4],img:(/^https?:/.test(r[5])?r[5]:IMG+r[5])+"?width=480",
- nc:r[6]?r[6].split("/").length:0,manches:!!r[7],lien:"https://www.awin1.com/cread.php?awinmid=130995&awinaffid="+AFF+"&ued="+encodeURIComponent("https://baruni.co/products/"+r[0])}})
- .sort(function(a,b){return(b.id==FAV)-(a.id==FAV)});
-var F=[["","Tout","All","الكل"],["manches","Avec manches","With sleeves","بأكمام"],["kaftan","Kaftans et abaya","Kaftans & abaya","قفاطين وعبايات"],["promo","Promos","On sale","تخفيضات"]];
-var TX={fav:["♥︎ Coup de cœur","♥︎ Diva's pick","♥︎ اختيار ديفا"],promo:["Promo","Sale","تخفيض"],col:["couleurs","colours","ألوان"]};
-var f="",n=10;
 function li(){return LANG=="en"?1:LANG=="ar"?2:0}
-function liste(){return R.filter(function(r){return!f||(f=="manches"&&r.manches)||(f=="kaftan"&&r.type!="dress")||(f=="promo"&&r.avant>0)})}
-function carte(r){var i=li();return'<a class="ptn" href="'+esc(r.lien)+'" target="_blank" rel="noopener sponsored"><span class="ptn-ph"><img src="'+esc(r.img)+'" alt="'+esc(r.nom)+'" loading="lazy" referrerpolicy="no-referrer">'
- +(r.id==FAV?'<span class="ptn-fav">'+TX.fav[i]+'</span>':r.avant?'<span class="ptn-fav promo">'+TX.promo[i]+'</span>':'')+'</span><b>'+esc(r.nom)+'</b><span class="ptn-px">'+r.prix+' $'+(r.avant?' <s>'+r.avant+' $</s>':'')+'</span>'
- +(r.nc>1?'<small>'+r.nc+' '+TX.col[i]+'</small>':'')+'</a>'}
-function draw(){var l=liste(),i=li()+1;
- document.getElementById("ptnF").innerHTML=F.map(function(c){return'<button type="button" data-f="'+c[0]+'" aria-pressed="'+(f==c[0])+'">'+c[i]+'</button>'}).join("");
- document.getElementById("ptnG").innerHTML=l.slice(0,n).map(carte).join("");
- document.getElementById("ptnPlus").parentNode.hidden=l.length<=n}
-document.getElementById("ptnF").addEventListener("click",function(e){var b=e.target.closest("[data-f]");if(b){f=b.dataset.f;n=10;draw()}});
-document.getElementById("ptnPlus").addEventListener("click",function(){n+=10;draw()});
+var MET={"Or rose":["Or rose","Rose gold","ذهب وردي"],"Or jaune":["Or jaune","Yellow gold","ذهب أصفر"],"Or blanc":["Or blanc","White gold","ذهب أبيض"],"Argent":["Argent","Silver","فضة"],"Platine":["Platine","Platinum","بلاتين"]};
+var TX={fav:["♥︎ Coup de cœur","♥︎ Diva's pick","♥︎ اختيار ديفا"],promo:["Promo","Sale","تخفيض"],col:["couleurs","colours","ألوان"]};
+var FAV="layan-dress-v-neck-maxi-wedding-guest-dress",M=[];
+if(typeof BARUNI!="undefined")M.push({id:"ba",nom:"BARUNI",logo:"https://cdn.shopify.com/s/files/1/0436/0113/3728/files/Untitled_design_7.png?v=1734889670&width=340",
+ lieu:["Dubaï · robes, kaftans et abaya · livraison dans tout le Golfe","Dubai · dresses, kaftans and abaya · delivery across the Gulf","دبي · فساتين وقفاطين وعبايات · توصيل لكل دول الخليج"],
+ plus:["Voir plus de robes","See more dresses","شوفي فساتين أكثر"],px:["Prix en dollars américains, tels qu'affichés par la maison.","Prices in US dollars, as shown by the house.","الأسعار بالدولار الأمريكي كما تعرضها الدار."],
+ F:[["","Tout","All","الكل"],["manches","Avec manches","With sleeves","بأكمام"],["kaftan","Kaftans et abaya","Kaftans & abaya","قفاطين وعبايات"],["promo","Promos","On sale","تخفيضات"]],
+ ok:function(r,f){return!f||(f=="manches"&&r.manches)||(f=="kaftan"&&r.type!="dress")||(f=="promo"&&r.avant>0)},
+ R:BARUNI.map(function(r){return{id:r[0],nom:r[1],type:r[2],prix:r[3],avant:r[4],cur:"$",img:(/^https?:/.test(r[5])?r[5]:"https://cdn.shopify.com/s/files/1/0436/0113/3728/files/"+r[5])+"?width=480",
+  nc:r[6]?r[6].split("/").length:0,manches:!!r[7],lien:aw("130995","https://baruni.co/products/"+r[0])}}).sort(function(a,b){return(b.id==FAV)-(a.id==FAV)})});
+if(typeof SHIRTCO!="undefined")M.push({id:"sc",nom:"The Shirt Company",logo:"logo-tsc.svg?v=1",
+ lieu:["Londres · chemises et robes-chemises pensées pour le corps féminin","London · shirts and shirt dresses designed for the female body","لندن · قمصان وفساتين قميص مصمّمة لجسم المرأة"],
+ plus:["Voir plus de chemises","See more shirts","شوفي قمصان أكثر"],px:["Prix en riyals qataris, tels qu'affichés par la maison pour le Qatar.","Prices in Qatari riyals, as shown by the house for Qatar.","الأسعار بالريال القطري كما تعرضها الدار لقطر."],
+ F:[["","Tout","All","الكل"],["shirt","Chemises","Shirts","قمصان"],["dress","Robes-chemises","Shirt dresses","فساتين قميص"],["curve","Grandes tailles","Curve","مقاسات كبيرة"],["promo","Promos","On sale","تخفيضات"]],
+ ok:function(r,f){return!f||(f=="promo"?r.avant>0:r.type==f)},
+ R:SHIRTCO.map(function(r){return{id:r[0],nom:r[1],type:r[2],prix:r[3],avant:r[4],cur:"QAR",img:"https://cdn.shopify.com/s/files/1/0557/5547/2956/"+r[5]+"?width=480",
+  sous:r[6],lien:aw("115010","https://www.theshirtcompany.com/products/"+r[0])}})});
+if(typeof ELVORIQUE!="undefined")M.push({id:"el",nom:"ELVORIQUE",logo:"https://elvoriquejewelry.com/cdn/shop/files/LOGO_c8d4d48c-e300-4e13-b958-eb50df8990b7.png?v=1784902640&width=360",
+ lieu:["Bijoux en diamants de laboratoire · bagues, alliances, colliers, boucles d'oreilles","Lab-grown diamond jewellery · rings, wedding bands, necklaces, earrings","مجوهرات ألماس مصنّع في المختبر · خواتم، دبل، قلائد، أقراط"],
+ plus:["Voir plus de bijoux","See more jewellery","شوفي مجوهرات أكثر"],px:["Prix en dollars américains, tels qu'affichés par la maison.","Prices in US dollars, as shown by the house.","الأسعار بالدولار الأمريكي كما تعرضها الدار."],
+ F:[["","Tout","All","الكل"],["bague","Bagues","Rings","خواتم"],["alliance","Alliances","Wedding bands","دبل"],["oreilles","Boucles d'oreilles","Earrings","أقراط"],["collier","Colliers","Necklaces","قلائد"],["bracelet","Bracelets","Bracelets","أساور"],["promo","Promos","On sale","تخفيضات"]],
+ ok:function(r,f){return!f||(f=="promo"?r.avant>0:r.type==f)},
+ R:ELVORIQUE.map(function(r){return{id:r[0],nom:r[1],type:r[2],prix:r[3],avant:r[4],cur:"$",img:"https://cdn.shopify.com/s/files/1/0760/5485/5928/"+r[5]+"&width=480",
+  met:r[6],lien:aw("128211","https://elvoriquejewelry.com/products/"+r[0])}})});
+var box=document.getElementById("ptnMaisons");if(!box||!M.length)return;
+var N0=innerWidth<640?6:10;
+M.forEach(function(m){m.f="";m.n=N0});
+function prix(r){return r.cur=="QAR"?r.prix+" QAR"+(r.avant?" <s>"+r.avant+"</s>":""):r.prix+" $"+(r.avant?" <s>"+r.avant+" $</s>":"")}
+function carte(r){var i=li(),sous=r.nc>1?r.nc+" "+TX.col[i]:r.met?(MET[r.met]||[r.met,r.met,r.met])[i]:r.sous?esc(r.sous):"";
+ return'<a class="ptn" href="'+esc(r.lien)+'" target="_blank" rel="noopener sponsored"><span class="ptn-ph"><img src="'+esc(r.img)+'" alt="'+esc(r.nom)+'" loading="lazy" referrerpolicy="no-referrer">'
+ +(r.id==FAV?'<span class="ptn-fav">'+TX.fav[i]+'</span>':r.avant?'<span class="ptn-fav promo">'+TX.promo[i]+'</span>':'')+'</span><b>'+esc(r.nom)+'</b><span class="ptn-px">'+prix(r)+'</span>'
+ +(sous?'<small>'+sous+'</small>':'')+'</a>'}
+function draw(){var i=li();
+ box.innerHTML=M.map(function(m){var l=m.R.filter(function(r){return m.ok(r,m.f)});
+  return'<div class="ptn-maison" data-m="'+m.id+'"><div class="ptn-mq"><img src="'+esc(m.logo)+'" alt="'+esc(m.nom)+'" referrerpolicy="no-referrer"><div><b dir="ltr">'+esc(m.nom)+'</b><small>'+m.lieu[i]+'</small></div></div>'
+  +'<div class="fchips">'+m.F.map(function(c){return'<button type="button" data-f="'+c[0]+'" aria-pressed="'+(m.f==c[0])+'">'+c[i+1]+'</button>'}).join("")+'</div>'
+  +'<div class="ptn-g">'+l.slice(0,m.n).map(carte).join("")+'</div>'
+  +(l.length>m.n?'<div class="ptn-more"><button class="btn lite" type="button" data-plus>'+m.plus[i]+'</button></div>':'')
+  +'<p class="ptn-note">'+m.px[i]+'</p></div>'}).join("")}
+box.addEventListener("click",function(e){var w=e.target.closest("[data-m]");if(!w)return;var m=M.filter(function(x){return x.id==w.dataset.m})[0];
+ var b=e.target.closest("[data-f]");if(b){m.f=b.dataset.f;m.n=N0;draw();return}
+ if(e.target.closest("[data-plus]")){m.n+=N0;draw()}});
 window.ptnDraw=draw;draw();
 })();
 </script>
